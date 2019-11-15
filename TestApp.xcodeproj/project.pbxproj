@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA14F3E4237E8A7600B3BD4B /* AnchorMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F3E3237E8A7600B3BD4B /* AnchorMaker.swift */; };
+		AA14F3E6237E8AB400B3BD4B /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F3E5237E8AB400B3BD4B /* UIView+Anchors.swift */; };
 		AA426037237D0EB0005D4F62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426036237D0EB0005D4F62 /* AppDelegate.swift */; };
 		AA42603B237D0EB0005D4F62 /* FisrtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42603A237D0EB0005D4F62 /* FisrtViewController.swift */; };
 		AA42603E237D0EB0005D4F62 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA42603C237D0EB0005D4F62 /* First.storyboard */; };
@@ -56,7 +58,6 @@
 		AA4260E0237D8249005D4F62 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260DF237D8249005D4F62 /* UITableView+Extension.swift */; };
 		AA4260E2237D8551005D4F62 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260E1237D8551005D4F62 /* CountryCell.swift */; };
 		AA4260E4237D85EE005D4F62 /* CountryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260E3237D85EE005D4F62 /* CountryItem.swift */; };
-		AA4260E6237D889D005D4F62 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260E5237D889D005D4F62 /* UIFont+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA14F3E3237E8A7600B3BD4B /* AnchorMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorMaker.swift; sourceTree = "<group>"; };
+		AA14F3E5237E8AB400B3BD4B /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 		AA426033237D0EB0005D4F62 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA426036237D0EB0005D4F62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA42603A237D0EB0005D4F62 /* FisrtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FisrtViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +135,6 @@
 		AA4260DF237D8249005D4F62 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		AA4260E1237D8551005D4F62 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		AA4260E3237D85EE005D4F62 /* CountryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItem.swift; sourceTree = "<group>"; };
-		AA4260E5237D889D005D4F62 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,7 @@
 				AA426082237D135A005D4F62 /* UserDefault.swift */,
 				AA426084237D135A005D4F62 /* Reachability.swift */,
 				AA4260C9237D5528005D4F62 /* Observable.swift */,
+				AA14F3E3237E8A7600B3BD4B /* AnchorMaker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 		AA42608A237D135A005D4F62 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				AA14F3E5237E8AB400B3BD4B /* UIView+Anchors.swift */,
 				AA42608B237D135A005D4F62 /* UIFont+Extension.swift */,
 				AA42608D237D135A005D4F62 /* URL+Extension.swift */,
 				AA4260BE237D28AE005D4F62 /* UIStoryboard+Extension.swift */,
@@ -335,7 +339,6 @@
 		AA426092237D135A005D4F62 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				AA4260E5237D889D005D4F62 /* UIFont+Extension.swift */,
 				AA426093237D135A005D4F62 /* String+Extension.swift */,
 				AA426094237D135A005D4F62 /* NSObject+AssociatedObject.swift */,
 				AA426095237D135A005D4F62 /* Data+Extension.swift */,
@@ -586,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA426072237D1215005D4F62 /* MockURLProtocol.swift in Sources */,
+				AA14F3E6237E8AB400B3BD4B /* UIView+Anchors.swift in Sources */,
 				AA4260A1237D135A005D4F62 /* Optional+Extension.swift in Sources */,
 				AA42609B237D135A005D4F62 /* CodableUserDefault.swift in Sources */,
 				AA42603B237D0EB0005D4F62 /* FisrtViewController.swift in Sources */,
@@ -613,12 +617,12 @@
 				AA4260DC237D8085005D4F62 /* TableViewDataProvider.swift in Sources */,
 				AA4260C6237D33AA005D4F62 /* APIProvider.swift in Sources */,
 				AA4260A2237D135A005D4F62 /* UIFont+Extension.swift in Sources */,
+				AA14F3E4237E8A7600B3BD4B /* AnchorMaker.swift in Sources */,
 				AA4260AA237D135A005D4F62 /* Data+Extension.swift in Sources */,
 				AA4260C2237D2904005D4F62 /* UIViewController+Extension.swift in Sources */,
 				AA426073237D1215005D4F62 /* MockService.swift in Sources */,
 				AA4260D8237D7036005D4F62 /* Asset.swift in Sources */,
 				AA426074237D1215005D4F62 /* Endpoints.swift in Sources */,
-				AA4260E6237D889D005D4F62 /* UIFont+Extension.swift in Sources */,
 				AA4260A9237D135A005D4F62 /* NSObject+AssociatedObject.swift in Sources */,
 				AA4260BD237D1D3D005D4F62 /* Coordinator.swift in Sources */,
 				AA4260E4237D85EE005D4F62 /* CountryItem.swift in Sources */,

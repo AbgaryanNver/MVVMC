@@ -21,11 +21,15 @@ class AppCoordinator: NavigationCoordinator {
             let firstViewController: FirstViewController = storyboard.instantiateViewController()
             firstViewController.flowDelegate = self
             firstViewController.modalPresentationStyle = .overFullScreen
-            present(firstViewController, animated: false)
+            push(firstViewController, animated: false)
+            // present(firstViewController, animated: false)
         }
     }
 }
 
 extension AppCoordinator: AppCoordinatorDelegate {
-    func addCurrencyAction() {}
+    func addCurrencyAction() {
+        let addcurrencyCoordinator = AddCurrencyCoordinator(context: context, root: navigationController)
+        addcurrencyCoordinator.start(animated: true)
+    }
 }
