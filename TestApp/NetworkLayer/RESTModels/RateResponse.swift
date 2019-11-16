@@ -1,5 +1,6 @@
 import Foundation
 
 struct ReteResponse: Codable {
-    let value: Int
+    let GBPUSD: Double
+    let USD: Double
 }

@@ -43,6 +43,8 @@ class APILoader<T: APIHandler> {
     private func log(_ response: URLResponse?, with data: Data?) {
         let responseUrl = response?.url?.absoluteString ?? ""
         let message = "Endpoint:\n\(responseUrl)\nResponse:\n\(data?.prettyJSON ?? "data is nil")"
+        let string1 = String(data: data!, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+        print(string1)
         print(message)
     }
 }

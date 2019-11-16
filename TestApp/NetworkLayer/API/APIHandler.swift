@@ -32,6 +32,10 @@ class Request {
         requestBuilder.setHeaders(request: &request)
     }
 
+    init(urlRequest: URLRequest) {
+        request = urlRequest
+    }
+
     var urlRequest: URLRequest {
         request
     }

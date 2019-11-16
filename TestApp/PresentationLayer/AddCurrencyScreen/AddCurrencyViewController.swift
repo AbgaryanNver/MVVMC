@@ -7,7 +7,9 @@ class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
     override func setupUI() {
         super.setupUI()
         view.backgroundColor = .red
-        tableViewDataProvider.configure(tableView: tableView)
+        tableViewDataProvider.configure(tableView: tableView) { [weak self] indexPath in
+            self?.viewModel.didTapedCell(at: indexPath)
+        }
         view.addSubview(tableView)
         tableView.makeAnchors {
             $0.edges.equalToSuperview()
@@ -15,6 +17,7 @@ class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
     }
 
     override func bind(viewModel _: AddCurrencyViewModel) {
+        super.bind(viewModel: viewModel)
         viewModel.dataSource.addObserver { [weak self] items in
             self?.setDataSourceForTableView(items)
         }
@@ -24,7 +27,7 @@ class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
         tableViewDataProvider.dataSource = dataSource
     }
 
-    func updateCell(indexPath: IndexPath) {
+    private func updateCell(at indexPath: IndexPath) {
         tableViewDataProvider.updateCell(indexPath: indexPath)
     }
 }

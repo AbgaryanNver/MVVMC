@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		AA14F3E4237E8A7600B3BD4B /* AnchorMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F3E3237E8A7600B3BD4B /* AnchorMaker.swift */; };
 		AA14F3E6237E8AB400B3BD4B /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F3E5237E8AB400B3BD4B /* UIView+Anchors.swift */; };
+		AA14F400237ECF1100B3BD4B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F3FF237ECF1100B3BD4B /* Array+Extension.swift */; };
+		AA14F402237EFBDB00B3BD4B /* RateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F401237EFBDB00B3BD4B /* RateItem.swift */; };
+		AA14F404237EFC2800B3BD4B /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F403237EFC2800B3BD4B /* RateCell.swift */; };
+		AA14F406237EFC4000B3BD4B /* RatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F405237EFC4000B3BD4B /* RatesViewModel.swift */; };
+		AA14F408237EFC5300B3BD4B /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F407237EFC5300B3BD4B /* RatesViewController.swift */; };
+		AA14F40A237EFC6900B3BD4B /* RatesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F409237EFC6900B3BD4B /* RatesCoordinator.swift */; };
+		AA14F41123800B0E00B3BD4B /* TimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F41023800B0E00B3BD4B /* TimeService.swift */; };
+		AA14F413238013D900B3BD4B /* RateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F412238013D900B3BD4B /* RateService.swift */; };
 		AA426037237D0EB0005D4F62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426036237D0EB0005D4F62 /* AppDelegate.swift */; };
 		AA42603B237D0EB0005D4F62 /* FisrtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42603A237D0EB0005D4F62 /* FisrtViewController.swift */; };
 		AA42603E237D0EB0005D4F62 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA42603C237D0EB0005D4F62 /* First.storyboard */; };
@@ -80,6 +88,14 @@
 /* Begin PBXFileReference section */
 		AA14F3E3237E8A7600B3BD4B /* AnchorMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorMaker.swift; sourceTree = "<group>"; };
 		AA14F3E5237E8AB400B3BD4B /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
+		AA14F3FF237ECF1100B3BD4B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		AA14F401237EFBDB00B3BD4B /* RateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateItem.swift; sourceTree = "<group>"; };
+		AA14F403237EFC2800B3BD4B /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
+		AA14F405237EFC4000B3BD4B /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
+		AA14F407237EFC5300B3BD4B /* RatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
+		AA14F409237EFC6900B3BD4B /* RatesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesCoordinator.swift; sourceTree = "<group>"; };
+		AA14F41023800B0E00B3BD4B /* TimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeService.swift; sourceTree = "<group>"; };
+		AA14F412238013D900B3BD4B /* RateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateService.swift; sourceTree = "<group>"; };
 		AA426033237D0EB0005D4F62 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA426036237D0EB0005D4F62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA42603A237D0EB0005D4F62 /* FisrtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FisrtViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				AA426036237D0EB0005D4F62 /* AppDelegate.swift */,
+				AA14F41023800B0E00B3BD4B /* TimeService.swift */,
+				AA14F412238013D900B3BD4B /* RateService.swift */,
 				AA426067237D0F4D005D4F62 /* NetworkLayer */,
 				AA426068237D0F62005D4F62 /* PresentationLayer */,
 				AA42607F237D135A005D4F62 /* Components */,
@@ -342,6 +360,7 @@
 				AA426093237D135A005D4F62 /* String+Extension.swift */,
 				AA426094237D135A005D4F62 /* NSObject+AssociatedObject.swift */,
 				AA426095237D135A005D4F62 /* Data+Extension.swift */,
+				AA14F3FF237ECF1100B3BD4B /* Array+Extension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -373,6 +392,11 @@
 		AA4260CB237D584C005D4F62 /* RateScreen */ = {
 			isa = PBXGroup;
 			children = (
+				AA14F409237EFC6900B3BD4B /* RatesCoordinator.swift */,
+				AA14F407237EFC5300B3BD4B /* RatesViewController.swift */,
+				AA14F405237EFC4000B3BD4B /* RatesViewModel.swift */,
+				AA14F401237EFBDB00B3BD4B /* RateItem.swift */,
+				AA14F403237EFC2800B3BD4B /* RateCell.swift */,
 			);
 			path = RateScreen;
 			sourceTree = "<group>";
@@ -600,14 +624,17 @@
 				AA426076237D1215005D4F62 /* APILoader.swift in Sources */,
 				AA4260B2237D1D2F005D4F62 /* AppCoordinator.swift in Sources */,
 				AA426077237D1215005D4F62 /* APIHandler.swift in Sources */,
+				AA14F40A237EFC6900B3BD4B /* RatesCoordinator.swift in Sources */,
 				AA4260C4237D294C005D4F62 /* StoryboardIdentifiable.swift in Sources */,
 				AA4260CF237D58BF005D4F62 /* FirstViewModel.swift in Sources */,
 				AA4260C8237D34D8005D4F62 /* RateResponse.swift in Sources */,
 				AA4260D3237D68CA005D4F62 /* AddCurrencyViewModel.swift in Sources */,
 				AA4260CA237D5528005D4F62 /* Observable.swift in Sources */,
+				AA14F41123800B0E00B3BD4B /* TimeService.swift in Sources */,
 				AA4260DE237D81A1005D4F62 /* TableViewProtocols.swift in Sources */,
 				AA426075237D1215005D4F62 /* HTTPMethod.swift in Sources */,
 				AA4260BF237D28AE005D4F62 /* UIStoryboard+Extension.swift in Sources */,
+				AA14F404237EFC2800B3BD4B /* RateCell.swift in Sources */,
 				AA4260D1237D68AD005D4F62 /* AddCurrencyCoordinaot.swift in Sources */,
 				AA4260AC237D135A005D4F62 /* OptionalProtocol.swift in Sources */,
 				AA4260A8237D135A005D4F62 /* String+Extension.swift in Sources */,
@@ -624,15 +651,20 @@
 				AA4260D8237D7036005D4F62 /* Asset.swift in Sources */,
 				AA426074237D1215005D4F62 /* Endpoints.swift in Sources */,
 				AA4260A9237D135A005D4F62 /* NSObject+AssociatedObject.swift in Sources */,
+				AA14F413238013D900B3BD4B /* RateService.swift in Sources */,
+				AA14F408237EFC5300B3BD4B /* RatesViewController.swift in Sources */,
+				AA14F402237EFBDB00B3BD4B /* RateItem.swift in Sources */,
 				AA4260BD237D1D3D005D4F62 /* Coordinator.swift in Sources */,
 				AA4260E4237D85EE005D4F62 /* CountryItem.swift in Sources */,
 				AA4260AB237D135A005D4F62 /* Presentable.swift in Sources */,
 				AA4260AD237D135A005D4F62 /* Identifiable.swift in Sources */,
 				AA4260BB237D1D3D005D4F62 /* CoordinatorContext.swift in Sources */,
 				AA4260D5237D68E2005D4F62 /* AddCurrencyViewController.swift in Sources */,
+				AA14F400237ECF1100B3BD4B /* Array+Extension.swift in Sources */,
 				AA42607C237D1302005D4F62 /* APIError.swift in Sources */,
 				AA42609E237D135A005D4F62 /* Reachability.swift in Sources */,
 				AA4260BC237D1D3D005D4F62 /* BaseNavigationVC.swift in Sources */,
+				AA14F406237EFC4000B3BD4B /* RatesViewModel.swift in Sources */,
 				AA4260AE237D135A005D4F62 /* ViewBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

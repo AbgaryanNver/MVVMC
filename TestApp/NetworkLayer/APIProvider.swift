@@ -1,24 +1,31 @@
 import Foundation
 
 struct RateAPI: APIHandler {
-    func makeRequest(from _: [String: Any]) -> Request {
-        let url = URL(string: Path().ratesUrlStirng)!
-        var urlRequest = URLRequest(url: url)
+    func makeRequest(from parameters: [String]) -> Request {
+        var components = URLComponents(string: Path().ratesUrlStirng)!
+        var queryItems = [URLQueryItem]()
+        for value in parameters {
+            queryItems.append(URLQueryItem(name: "pairs", value: "\(value)"))
+        }
+
+        components.queryItems = queryItems
+        let url = components.url
+        var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = HTTPMethod.get.rawValue
-        let request = Request(urlRequest: urlRequest, requestBuilder: DefaultRequest())
+        let request = Request(urlRequest: urlRequest)
 
         return request
     }
 
-    func parseResponse(data: Data) throws -> ReteResponse {
+    func parseResponse(data: Data) throws -> [String: Double] {
         try defaultParseResponse(data: data)
     }
 }
 
 class APIProvider {
-    func getRates(ratePair _: [String], completion: @escaping (Result<ReteResponse?, Error>) -> Void) {
+    func getRates(ratePair: [String], completion: @escaping (Result<[String: Double]?, Error>) -> Void) {
         let api = RateAPI()
-        APILoader(apiRequest: api).loadAPIRequest(requestData: [:]) { result in
+        APILoader(apiRequest: api).loadAPIRequest(requestData: ratePair) { result in
             DispatchQueue.main.async {
                 completion(result)
             }

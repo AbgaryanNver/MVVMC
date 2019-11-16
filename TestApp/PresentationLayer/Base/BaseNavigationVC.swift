@@ -42,14 +42,6 @@ class BaseNavigationVC: UINavigationController {
         navigationBar.isTranslucent = true
         updateNavigationBarColor()
         delegate = self
-        setupView()
-    }
-
-    func setupView() {
-        navigationBar.layer.shadowOffset = CGSize(width: 0, height: 3)
-        navigationBar.layer.shadowRadius = 5
-        navigationBar.layer.shadowColor = UIColor.black.cgColor
-        navigationBar.layer.shadowOpacity = 0.1
     }
 
     private func updateNavigationBarColor() {

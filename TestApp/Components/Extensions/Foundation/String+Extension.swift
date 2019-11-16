@@ -24,12 +24,4 @@ extension String {
         let set = CharacterSet.letters.union(CharacterSet.decimalDigits)
         return set.isSuperset(of: CharacterSet(charactersIn: self))
     }
-
-    var filterNumber: String { filter("0123456789.".contains) }
-
-    var removeFirstZero: String {
-        mutating get {
-            first == "0" ? String(removeFirst()) : self
-        }
-    }
 }
