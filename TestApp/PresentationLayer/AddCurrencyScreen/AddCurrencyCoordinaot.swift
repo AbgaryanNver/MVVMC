@@ -9,8 +9,8 @@ class AddCurrencyCoordinator: NavigationCoordinator {
 }
 
 extension AddCurrencyCoordinator: AddCurrencyCoordinatorDelgate {
-    func didTapedCell(fromCountry: Country, toCountries: [Country]) {
-        let coordinator = RatesCoordinator(coordinator: self, fromCountry: fromCountry, toCountries: toCountries)
+    func didTapedCell(fromCurrencyKey: CurrencyKey, toCurrencyKeys: [CurrencyKey]) {
+        let coordinator = RatesCoordinator(coordinator: self, fromCurrencyKey: fromCurrencyKey, toCurrencyKeys: toCurrencyKeys)
         coordinator.start(animated: true)
     }
 }

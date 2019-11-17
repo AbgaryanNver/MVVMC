@@ -26,8 +26,4 @@ class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
     private func setDataSourceForTableView(_ dataSource: [TableViewItem]) {
         tableViewDataProvider.dataSource = dataSource
     }
-
-    private func updateCell(at indexPath: IndexPath) {
-        tableViewDataProvider.updateCell(indexPath: indexPath)
-    }
 }

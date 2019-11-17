@@ -3,13 +3,6 @@ import UIKit
 class RatesViewController: BaseViewController<RatesViewModel> {
     private let tableViewDataProvider = TableViewDataProvider()
     private let tableView = UITableView()
-//    private lazy var addButton = UIButton {
-//        $0.titleLabel?.text = "Add currency pair"
-//        $0.titleLabel?.font = UIFont.sfProTextBold16
-//        $0.setTitleColor(.systemBlue, for: .normal)
-//        $0.setTitleColor(UIColor.systemBlue.withAlphaComponent(0.8), for: .highlighted)
-//        $0.setImage(Asset.icPlus, for: .normal)
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

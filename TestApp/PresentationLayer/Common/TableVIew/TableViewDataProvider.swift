@@ -1,14 +1,30 @@
 import UIKit
 
 final class TableViewDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
+    var canRemoveRow = true
     private weak var tableView: UITableView?
     private var onTapCell: ((IndexPath) -> Void)?
 
     var dataSource: [TableViewItem] = [] {
         didSet {
-            tableView?.register(with: dataSource)
-            DispatchQueue.main.async {
-                self.tableView?.reloadData()
+            if oldValue.count == dataSource.count {
+                guard let indexPaths = tableView?.indexPathsForVisibleRows else {
+                    return
+                }
+                indexPaths.forEach { indexPath in
+                    guard let visibleCell = tableView?.cellForRow(at: indexPath) as? TableViewCell else {
+                        return
+                    }
+                    let item = dataSource[indexPath.row]
+                    DispatchQueue.main.async {
+                        visibleCell.configure(with: item)
+                    }
+                }
+            } else {
+                tableView?.register(with: dataSource)
+                DispatchQueue.main.async {
+                    self.tableView?.reloadData()
+                }
             }
         }
     }
@@ -23,16 +39,6 @@ final class TableViewDataProvider: NSObject, UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         self.onTapCell = onTapCell
-    }
-
-    func updateCell(indexPath: IndexPath) {
-        let cell = tableView?.cellForRow(at: indexPath)
-        if let cell = cell as? TableViewCell {
-            let item = dataSource[indexPath.row]
-            cell.configure(with: item)
-        } else {
-            print("\(type(of: cell)) should conform to TableViewCell protocol")
-        }
     }
 
     // MARK: - UITableViewDataSource
@@ -56,6 +62,13 @@ final class TableViewDataProvider: NSObject, UITableViewDataSource, UITableViewD
         }
 
         return cell
+    }
+
+    func tableView(_: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if let _ = dataSource[indexPath.row] as? CountryItem {
+            return .none
+        }
+        return .delete
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

@@ -1,15 +1,15 @@
 import Foundation
 
 struct CountryItem: TableViewItem {
-    let country: Country
+    let key: CurrencyKey
     var isMainItem: Bool
     var isSelected: Bool
 
     var cellClassIdentifier: AnyClass = CountryCell.self
 
-    init(country: Country, isMainItem: Bool = false, isSelected: Bool = false) {
+    init(key: CurrencyKey, isMainItem: Bool = false, isSelected: Bool = false) {
         self.isMainItem = isMainItem
         self.isSelected = isSelected
-        self.country = country
+        self.key = key
     }
 }

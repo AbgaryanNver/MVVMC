@@ -64,15 +64,14 @@ class CountryCell: UITableViewCell, TableViewCell {
             assertionFailure("item isn't of CountryItem type")
             return
         }
-        print("item = \(item)")
         if item.isMainItem {
             setTextColor(.blue)
         } else if item.isSelected {
             setTextColor(.gray)
         }
-        moneyNameLabel.text = item.country.currency
-        abbreviationNameLabel.text = item.country.cur
-        countryFlagImageView.image = UIImage(named: item.country.imageName)
+        moneyNameLabel.text = item.key.currency
+        abbreviationNameLabel.text = item.key.rawValue.uppercased()
+        countryFlagImageView.image = UIImage(named: item.key.imageName)
     }
 
     private func setTextColor(_ color: UIColor) {

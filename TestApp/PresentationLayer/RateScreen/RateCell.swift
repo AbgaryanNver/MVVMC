@@ -66,6 +66,8 @@ class RateCell: UITableViewCell, TableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        toCurrencyLabel.text = nil
+        rateValueLable.text = nil
     }
 
     func configure(with item: TableViewItem) {
@@ -74,9 +76,13 @@ class RateCell: UITableViewCell, TableViewCell {
             return
         }
 
-        fromCurrencyLabel.text = "1" + item.formCountry.cur.uppercased()
-        fromAbbreviationLable.text = item.formCountry.currency
-        toCurrencyLabel.text = item.toCountry.currency + item.toCountry.cur.uppercased()
+        fromAbbreviationLable.text = "1" + " " + item.fromCurrencyKey.rawValue.uppercased()
+        fromCurrencyLabel.text = item.fromCurrencyKey.currency
+        toCurrencyLabel.text = item.toCurrencyKey.currency + item.toCurrencyKey.rawValue.uppercased()
         rateValueLable.text = item.rateValue
+
+//        let attributedString = NSMutableAttributedString(string: item.rateValue)
+//        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemGray, range: NSRange(location: 5, length: 2))
+//        rateValueLable.attributedText = attributedString
     }
 }

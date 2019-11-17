@@ -5,9 +5,10 @@ protocol RatesCoordinatorDelegate: AnyObject {
 }
 
 class RatesViewModel: BaseViewModel {
-    let fromCountry: Country
-    let toCountries: [Country]
+    let fromCurrencyKey: CurrencyKey
+    let toCurrencyKeys: [CurrencyKey]
     let timeService: TimeServiceProtocol
+    let rateService = RateService()
 
     var rateItems = Observable<[TableViewItem]>([])
     weak var flowDelegate: RatesCoordinatorDelegate?
@@ -16,13 +17,14 @@ class RatesViewModel: BaseViewModel {
 
     init(context: CoordinatorContext,
          flowDelegate: RatesCoordinatorDelegate?,
-         fromCountry: Country, toCountries: [Country],
+         fromCurrencyKey: CurrencyKey,
+         toCurrencyKeys: [CurrencyKey],
          timeService: TimeServiceProtocol = TimeService(duration: 1),
          title: String = "") {
         self.flowDelegate = flowDelegate
         self.context = context
-        self.fromCountry = fromCountry
-        self.toCountries = toCountries
+        self.fromCurrencyKey = fromCurrencyKey
+        self.toCurrencyKeys = toCurrencyKeys
         self.timeService = timeService
         super.init(title: title)
     }
@@ -37,12 +39,18 @@ class RatesViewModel: BaseViewModel {
     }
 
     private func getRates() {
-        let ratePair = toCountries.map { fromCountry.cur + $0.cur }
+        let ratePair = toCurrencyKeys.map { fromCurrencyKey.rawValue.uppercased() + $0.rawValue.uppercased() }
+
         context.restAPI.getRates(ratePair: ratePair) { [weak self] result in
+            guard let self = self else {
+                return
+            }
+
             switch result {
                 case let .success(response):
                     if let response = response {
-                        self?.setItems(response)
+                        self.rateService.rate = response
+                        self.setItems(self.rateService.rate)
                     }
                 case let .failure(error):
                     print(error)
@@ -50,12 +58,10 @@ class RatesViewModel: BaseViewModel {
         }
     }
 
-    private func setItems(_ pairs: [String: Double]) {
-        rateItems.value = pairs.map { key, value in
-            RateItem(formCountry: Country(cur: key, currency: key, imageName: ""),
-                     toCountry: Country(cur: key, currency: key, imageName: ""),
-                     rateValue: "\(value)")
-        }
+    private func setItems(_: [String: Double]) {
+        let items = rateService.convertor.reateItems
+        let sortedItems = items.compactMap { $0 }.sorted { $0.toCurrencyKey.rawValue < $1.toCurrencyKey.rawValue }
+        rateItems.value = sortedItems
     }
 }
 

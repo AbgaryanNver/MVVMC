@@ -15,6 +15,13 @@ class APILoader<T: APIHandler> {
             return completionHandler(.failure(ConectionError(message: "No Internet Connection")))
         }
         let urlRequest = apiRequest.makeRequest(from: requestData).urlRequest
+
+//        urlSession.getAllTasks { urlSessionTask in
+//            urlSessionTask.forEach {
+//                $0.cancel()
+//            }
+//        }
+
         urlSession.dataTask(with: urlRequest) { data, response, error in
             self.log(response, with: data)
             if let data = data, data != Data() {
@@ -34,7 +41,7 @@ class APILoader<T: APIHandler> {
                     if let error = error {
                         completionHandler(.failure(error))
                     } else {
-                        completionHandler(.failure(APIError(message: "L10n.somethiingUnexpectedHappenedErrorKey", description: nil)))
+                        completionHandler(.failure(APIError(message: "somethiingUnexpectedHappenedError", description: nil)))
                     }
             }
         }.resume()
@@ -43,8 +50,8 @@ class APILoader<T: APIHandler> {
     private func log(_ response: URLResponse?, with data: Data?) {
         let responseUrl = response?.url?.absoluteString ?? ""
         let message = "Endpoint:\n\(responseUrl)\nResponse:\n\(data?.prettyJSON ?? "data is nil")"
-        let string1 = String(data: data!, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-        print(string1)
+        // let string1 = String(data: data!, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+        // print(string1)
         print(message)
     }
 }

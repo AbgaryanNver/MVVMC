@@ -62,7 +62,6 @@ extension RequestHandler {
 extension ResponseHandler {
     func defaultParseResponse<T: Codable>(data: Data) throws -> T {
         let jsonDecoder = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 
         if let body = try? jsonDecoder.decode(T.self, from: data) {
             return body

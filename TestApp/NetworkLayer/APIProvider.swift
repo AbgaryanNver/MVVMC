@@ -26,9 +26,7 @@ class APIProvider {
     func getRates(ratePair: [String], completion: @escaping (Result<[String: Double]?, Error>) -> Void) {
         let api = RateAPI()
         APILoader(apiRequest: api).loadAPIRequest(requestData: ratePair) { result in
-            DispatchQueue.main.async {
-                completion(result)
-            }
+            completion(result)
         }
     }
 }

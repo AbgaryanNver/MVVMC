@@ -1,21 +1,30 @@
 import Foundation
 
 protocol AddCurrencyCoordinatorDelgate: AnyObject {
-    func didTapedCell(fromCountry: Country, toCountries: [Country])
+    func didTapedCell(fromCurrencyKey: CurrencyKey, toCurrencyKeys: [CurrencyKey])
 }
 
 class AddCurrencyViewModel: BaseViewModel {
     weak var flowDelegate: AddCurrencyCoordinatorDelgate?
-    lazy var dataSource: Observable<[CountryItem]> = {
-        let items = Countrys.allCountrys.map { country -> CountryItem in
-            CountryItem(country: country)
-        }
-        return Observable<[CountryItem]>(items)
-    }()
+    var dataSource = Observable<[CountryItem]>([])
+    private var rateService = RateService()
 
     init(flowDelegate: AddCurrencyCoordinatorDelgate?, title: String = "") {
         self.flowDelegate = flowDelegate
         super.init(title: title)
+        setItems()
+    }
+
+    func setItems() {
+        let keys = CurrencyKey.allCases
+        let items = keys.map { key -> CountryItem in
+            var isMainItem = rateService.key != nil && rateService.key == key
+
+            let isSelected = rateService.keys.contains(key)
+            return CountryItem(key: key, isMainItem: isMainItem, isSelected: isSelected)
+        }
+
+        dataSource.value = items
     }
 
     func didTapedCell(at indexPath: IndexPath) {
@@ -28,8 +37,9 @@ class AddCurrencyViewModel: BaseViewModel {
             } else if !item.isSelected {
                 item.isSelected = true
                 dataSource.value[indexPath.row] = item
-                let toCountries = dataSource.value.filter { $0.isSelected }.map { $0.country }
-                flowDelegate?.didTapedCell(fromCountry: fromRateMainItem!.country, toCountries: toCountries)
+                let toCurrencyKeys = dataSource.value.filter { $0.isSelected }.map { $0.key }
+                rateService.storeState(currencyKey: fromRateMainItem!.key, currencyKeys: toCurrencyKeys)
+                flowDelegate?.didTapedCell(fromCurrencyKey: fromRateMainItem!.key, toCurrencyKeys: toCurrencyKeys)
             }
         }
     }

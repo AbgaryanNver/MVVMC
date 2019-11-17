@@ -1,15 +1,15 @@
 import Foundation
 
 struct RateItem: TableViewItem {
-    let formCountry: Country
-    let toCountry: Country
+    let fromCurrencyKey: CurrencyKey
+    let toCurrencyKey: CurrencyKey
     let rateValue: String
 
     var cellClassIdentifier: AnyClass = RateCell.self
 
-    init(formCountry: Country, toCountry: Country, rateValue: String) {
-        self.formCountry = formCountry
-        self.toCountry = toCountry
+    init(fromCurrencyKey: CurrencyKey, toCurrencyKey: CurrencyKey, rateValue: String) {
+        self.fromCurrencyKey = fromCurrencyKey
+        self.toCurrencyKey = toCurrencyKey
         self.rateValue = rateValue
     }
 }
