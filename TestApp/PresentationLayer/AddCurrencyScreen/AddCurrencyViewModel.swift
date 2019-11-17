@@ -5,12 +5,16 @@ protocol AddCurrencyCoordinatorDelgate: AnyObject {
 }
 
 class AddCurrencyViewModel: BaseViewModel {
+    let context: CoordinatorContext
     weak var flowDelegate: AddCurrencyCoordinatorDelgate?
     var dataSource = Observable<[CountryItem]>([])
+    var isLoading = Observable<Bool>(false)
+    var isNextButtonActive = Observable<Bool>(false)
     private var rateService = RateService()
 
-    init(flowDelegate: AddCurrencyCoordinatorDelgate?, title: String = "") {
+    init(context: CoordinatorContext, flowDelegate: AddCurrencyCoordinatorDelgate?, title: String = "") {
         self.flowDelegate = flowDelegate
+        self.context = context
         super.init(title: title)
         setItems()
     }
@@ -19,11 +23,16 @@ class AddCurrencyViewModel: BaseViewModel {
         let keys = CurrencyKey.allCases
         let items = keys.map { key -> CountryItem in
             let isMainItem = rateService.key != nil && rateService.key == key
+            isNextButtonActive.value = !rateService.keys.isEmpty
             let isSelected = rateService.keys.contains(key)
             return CountryItem(key: key, isMainItem: isMainItem, isSelected: isSelected)
         }
 
         dataSource.value = items
+    }
+
+    func nextButtonAction() {
+        flowDelegate?.didTapedCell(fromCurrencyKey: rateService.key, toCurrencyKeys: rateService.keys)
     }
 
     func didTapedCell(at indexPath: IndexPath) {
@@ -40,8 +49,30 @@ class AddCurrencyViewModel: BaseViewModel {
                 guard let fromCurrencyKey = fromRateMainItem?.key else {
                     return
                 }
-                rateService.storeState(currencyKey: fromCurrencyKey, currencyKeys: toCurrencyKeys)
-                flowDelegate?.didTapedCell(fromCurrencyKey: fromCurrencyKey, toCurrencyKeys: toCurrencyKeys)
+                rateService.storeState(fromCurrencyKey, toCurrencyKeys)
+                getRates(fromCurrencyKey, toCurrencyKeys)
+            }
+        }
+    }
+
+    private func getRates(_ fromCurrencyKey: CurrencyKey, _ toCurrencyKeys: [CurrencyKey]) {
+        let ratePair = toCurrencyKeys.map { fromCurrencyKey.rawValue.uppercased() + $0.rawValue.uppercased() }
+        isLoading.value = true
+        context.restAPI.getRates(ratePair: ratePair) { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            self.isLoading.value = false
+            switch result {
+                case let .success(response):
+                    if let response = response {
+                        self.rateService.rate = response
+                        DispatchQueue.main.async {
+                            self.flowDelegate?.didTapedCell(fromCurrencyKey: fromCurrencyKey, toCurrencyKeys: toCurrencyKeys)
+                        }
+                    }
+                case let .failure(error):
+                    print(error)
             }
         }
     }

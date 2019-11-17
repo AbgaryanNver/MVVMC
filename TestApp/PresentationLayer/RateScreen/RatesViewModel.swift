@@ -30,7 +30,7 @@ class RatesViewModel: BaseViewModel {
     }
 
     func viewDidLoad() {
-        getRates()
+        setItems()
         timeService.startTime(output: self)
     }
 

@@ -32,9 +32,9 @@ class RateService {
         }
     }
 
-    func storeState(currencyKey: CurrencyKey, currencyKeys: [CurrencyKey]) {
-        key = currencyKey
-        keys = currencyKeys
+    func storeState(_ fromCurrencyKey: CurrencyKey, _ toCurrencyKeys: [CurrencyKey]) {
+        key = fromCurrencyKey
+        keys = toCurrencyKeys
     }
 }
 
