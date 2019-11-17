@@ -6,7 +6,7 @@ protocol RatesCoordinatorDelegate: AnyObject {
 
 class RatesViewModel: BaseViewModel {
     let fromCurrencyKey: CurrencyKey
-    let toCurrencyKeys: [CurrencyKey]
+    var toCurrencyKeys: [CurrencyKey]
     let timeService: TimeServiceProtocol
     let rateService = RateService()
 
@@ -19,7 +19,7 @@ class RatesViewModel: BaseViewModel {
          flowDelegate: RatesCoordinatorDelegate?,
          fromCurrencyKey: CurrencyKey,
          toCurrencyKeys: [CurrencyKey],
-         timeService: TimeServiceProtocol = TimeService(duration: 1),
+         timeService: TimeServiceProtocol = TimeService(duration: 11),
          title: String = "") {
         self.flowDelegate = flowDelegate
         self.context = context
@@ -38,6 +38,15 @@ class RatesViewModel: BaseViewModel {
         timeService.stopTime()
     }
 
+    func didRemove(_ item: TableViewItem) {
+        if let rateItem = item as? RateItem {
+            toCurrencyKeys.removeAll { currencyKey -> Bool in
+                currencyKey == rateItem.toCurrencyKey
+            }
+            rateService.keys = toCurrencyKeys
+        }
+    }
+
     private func getRates() {
         let ratePair = toCurrencyKeys.map { fromCurrencyKey.rawValue.uppercased() + $0.rawValue.uppercased() }
 
@@ -50,7 +59,7 @@ class RatesViewModel: BaseViewModel {
                 case let .success(response):
                     if let response = response {
                         self.rateService.rate = response
-                        self.setItems(self.rateService.rate)
+                        self.setItems()
                     }
                 case let .failure(error):
                     print(error)
@@ -58,8 +67,8 @@ class RatesViewModel: BaseViewModel {
         }
     }
 
-    private func setItems(_: [String: Double]) {
-        let items = rateService.convertor.reateItems
+    private func setItems() {
+        let items = rateService.getItems()
         let sortedItems = items.compactMap { $0 }.sorted { $0.toCurrencyKey.rawValue < $1.toCurrencyKey.rawValue }
         rateItems.value = sortedItems
     }

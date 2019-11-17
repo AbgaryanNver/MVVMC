@@ -18,8 +18,7 @@ class AddCurrencyViewModel: BaseViewModel {
     func setItems() {
         let keys = CurrencyKey.allCases
         let items = keys.map { key -> CountryItem in
-            var isMainItem = rateService.key != nil && rateService.key == key
-
+            let isMainItem = rateService.key != nil && rateService.key == key
             let isSelected = rateService.keys.contains(key)
             return CountryItem(key: key, isMainItem: isMainItem, isSelected: isSelected)
         }
@@ -38,8 +37,11 @@ class AddCurrencyViewModel: BaseViewModel {
                 item.isSelected = true
                 dataSource.value[indexPath.row] = item
                 let toCurrencyKeys = dataSource.value.filter { $0.isSelected }.map { $0.key }
-                rateService.storeState(currencyKey: fromRateMainItem!.key, currencyKeys: toCurrencyKeys)
-                flowDelegate?.didTapedCell(fromCurrencyKey: fromRateMainItem!.key, toCurrencyKeys: toCurrencyKeys)
+                guard let fromCurrencyKey = fromRateMainItem?.key else {
+                    return
+                }
+                rateService.storeState(currencyKey: fromCurrencyKey, currencyKeys: toCurrencyKeys)
+                flowDelegate?.didTapedCell(fromCurrencyKey: fromCurrencyKey, toCurrencyKeys: toCurrencyKeys)
             }
         }
     }

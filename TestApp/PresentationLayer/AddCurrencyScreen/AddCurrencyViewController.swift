@@ -7,13 +7,19 @@ class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
     override func setupUI() {
         super.setupUI()
         view.backgroundColor = .red
-        tableViewDataProvider.configure(tableView: tableView) { [weak self] indexPath in
+        tableViewDataProvider.configure(tableView: tableView, onTapCell: { [weak self] indexPath in
             self?.viewModel.didTapedCell(at: indexPath)
-        }
+        })
+
         view.addSubview(tableView)
         tableView.makeAnchors {
             $0.edges.equalToSuperview()
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.setItems()
     }
 
     override func bind(viewModel _: AddCurrencyViewModel) {

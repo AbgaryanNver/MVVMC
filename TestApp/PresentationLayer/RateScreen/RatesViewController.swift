@@ -16,7 +16,9 @@ class RatesViewController: BaseViewController<RatesViewModel> {
 
     override func setupUI() {
         super.setupUI()
-        tableViewDataProvider.configure(tableView: tableView)
+        tableViewDataProvider.configure(tableView: tableView, didRemoveItem: { [weak self] item in
+            self?.viewModel.didRemove(item)
+        })
         view.addSubview(tableView)
         tableView.makeAnchors {
             $0.edges.equalToSuperview()

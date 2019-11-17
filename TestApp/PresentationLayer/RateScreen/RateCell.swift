@@ -81,8 +81,10 @@ class RateCell: UITableViewCell, TableViewCell {
         toCurrencyLabel.text = item.toCurrencyKey.currency + item.toCurrencyKey.rawValue.uppercased()
         rateValueLable.text = item.rateValue
 
-//        let attributedString = NSMutableAttributedString(string: item.rateValue)
-//        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemGray, range: NSRange(location: 5, length: 2))
-//        rateValueLable.attributedText = attributedString
+        let attributedString = NSMutableAttributedString(string: item.rateValue)
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor,
+                                      value: UIColor.systemGray,
+                                      range: NSRange(location: item.rateValue.count - 2, length: 2))
+        rateValueLable.attributedText = attributedString
     }
 }

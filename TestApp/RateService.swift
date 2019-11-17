@@ -3,28 +3,24 @@ import Foundation
 class RateService {
     @CodableUserDefault(key: "Rate", defaultValue: [:])
 
-    var rate: [String: Double] {
-        didSet(new) {
-            convertor.dictionary = new
-        }
-    }
-
-    lazy var convertor = Convertor(rate)
+    var rate: [String: Double]
 
     @CodableUserDefault(key: "from", defaultValue: nil)
+
     var key: CurrencyKey
+
     @CodableUserDefault(key: "to", defaultValue: [])
+
     var keys: [CurrencyKey]
 
-    func storeState(currencyKey: CurrencyKey, currencyKeys: [CurrencyKey]) {
-        key = currencyKey
-        keys = currencyKeys
-    }
-}
+    func getItems() -> [RateItem?] {
+        rate.filter { pair in
 
-class Convertor {
-    var reateItems: [RateItem?] {
-        dictionary.map { pair in
+            if let toCurrencyKey = CurrencyKey(rawValue: String(pair.key.suffix(3)).lowercased()) {
+                return keys.contains(toCurrencyKey)
+            }
+            return true
+        }.map { pair in
             let rateVale = String(format: "%.4f", pair.value)
 
             guard let fromCurrencyKey = CurrencyKey(rawValue: String(pair.key.prefix(3)).lowercased()),
@@ -36,10 +32,9 @@ class Convertor {
         }
     }
 
-    var dictionary: [String: Double]
-
-    init(_ dictionary: [String: Double]) {
-        self.dictionary = dictionary
+    func storeState(currencyKey: CurrencyKey, currencyKeys: [CurrencyKey]) {
+        key = currencyKey
+        keys = currencyKeys
     }
 }
 

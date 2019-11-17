@@ -64,11 +64,15 @@ class CountryCell: UITableViewCell, TableViewCell {
             assertionFailure("item isn't of CountryItem type")
             return
         }
+
+        moneyNameLabel.textColor = .black
+        abbreviationNameLabel.textColor = .systemGray
         if item.isMainItem {
             setTextColor(.blue)
         } else if item.isSelected {
             setTextColor(.gray)
         }
+
         moneyNameLabel.text = item.key.currency
         abbreviationNameLabel.text = item.key.rawValue.uppercased()
         countryFlagImageView.image = UIImage(named: item.key.imageName)

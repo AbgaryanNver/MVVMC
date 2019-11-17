@@ -1,3 +1,4 @@
+// swiftlint:disable all
 import UIKit
 
 @objc protocol NavigationBarAppearance: AnyObject {

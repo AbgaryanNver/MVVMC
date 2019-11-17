@@ -4,18 +4,20 @@ final class TableViewDataProvider: NSObject, UITableViewDataSource, UITableViewD
     var canRemoveRow = true
     private weak var tableView: UITableView?
     private var onTapCell: ((IndexPath) -> Void)?
+    private var didRemoveItem: ((TableViewItem) -> Void)?
 
     var dataSource: [TableViewItem] = [] {
         didSet {
-            if oldValue.count == dataSource.count {
-                guard let indexPaths = tableView?.indexPathsForVisibleRows else {
+            if oldValue.count == dataSource.count, !dataSource.isEmpty {
+                guard let indexPaths = self.tableView?.indexPathsForVisibleRows else {
                     return
                 }
+
                 indexPaths.forEach { indexPath in
-                    guard let visibleCell = tableView?.cellForRow(at: indexPath) as? TableViewCell else {
+                    guard let visibleCell = self.tableView?.cellForRow(at: indexPath) as? TableViewCell else {
                         return
                     }
-                    let item = dataSource[indexPath.row]
+                    let item = self.dataSource[indexPath.row]
                     DispatchQueue.main.async {
                         visibleCell.configure(with: item)
                     }
@@ -29,7 +31,7 @@ final class TableViewDataProvider: NSObject, UITableViewDataSource, UITableViewD
         }
     }
 
-    func configure(tableView: UITableView, onTapCell: ((IndexPath) -> Void)? = nil) {
+    func configure(tableView: UITableView, onTapCell: ((IndexPath) -> Void)? = nil, didRemoveItem: ((TableViewItem) -> Void)? = nil) {
         self.tableView = tableView
 
         tableView.separatorStyle = .none
@@ -39,6 +41,7 @@ final class TableViewDataProvider: NSObject, UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         self.onTapCell = onTapCell
+        self.didRemoveItem = didRemoveItem
     }
 
     // MARK: - UITableViewDataSource
@@ -65,7 +68,7 @@ final class TableViewDataProvider: NSObject, UITableViewDataSource, UITableViewD
     }
 
     func tableView(_: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        if let _ = dataSource[indexPath.row] as? CountryItem {
+        if dataSource[safe: indexPath.row] is CountryItem {
             return .none
         }
         return .delete
@@ -73,8 +76,9 @@ final class TableViewDataProvider: NSObject, UITableViewDataSource, UITableViewD
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            dataSource.remove(at: indexPath.row)
+            let item = dataSource.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            didRemoveItem?(item)
         }
     }
 
@@ -82,8 +86,6 @@ final class TableViewDataProvider: NSObject, UITableViewDataSource, UITableViewD
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let onTapCell = onTapCell {
-            onTapCell(indexPath)
-        }
+        onTapCell?(indexPath)
     }
 }
