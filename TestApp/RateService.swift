@@ -30,6 +30,16 @@ class RateService {
         key = fromCurrencyKey
         keys = toCurrencyKeys
     }
+
+    func removeItem(by key: CurrencyKey) {
+        keys.removeAll { currencyKey -> Bool in
+            currencyKey == key
+        }
+        if keys.isEmpty {
+            self.key = nil
+            rate = [:]
+        }
+    }
 }
 
 enum CurrencyKey: String, CaseIterable, Codable {

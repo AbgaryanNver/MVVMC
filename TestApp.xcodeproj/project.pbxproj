@@ -32,17 +32,11 @@
 		AA426077237D1215005D4F62 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426071237D1215005D4F62 /* APIHandler.swift */; };
 		AA42607C237D1302005D4F62 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426079237D1302005D4F62 /* APIError.swift */; };
 		AA42609B237D135A005D4F62 /* CodableUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426081237D135A005D4F62 /* CodableUserDefault.swift */; };
-		AA42609C237D135A005D4F62 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426082237D135A005D4F62 /* UserDefault.swift */; };
 		AA42609E237D135A005D4F62 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426084237D135A005D4F62 /* Reachability.swift */; };
-		AA4260A1237D135A005D4F62 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426089237D135A005D4F62 /* Optional+Extension.swift */; };
 		AA4260A2237D135A005D4F62 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42608B237D135A005D4F62 /* UIFont+Extension.swift */; };
-		AA4260A4237D135A005D4F62 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42608D237D135A005D4F62 /* URL+Extension.swift */; };
-		AA4260A8237D135A005D4F62 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426093237D135A005D4F62 /* String+Extension.swift */; };
 		AA4260A9237D135A005D4F62 /* NSObject+AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426094237D135A005D4F62 /* NSObject+AssociatedObject.swift */; };
 		AA4260AA237D135A005D4F62 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426095237D135A005D4F62 /* Data+Extension.swift */; };
 		AA4260AB237D135A005D4F62 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426097237D135A005D4F62 /* Presentable.swift */; };
-		AA4260AC237D135A005D4F62 /* OptionalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426098237D135A005D4F62 /* OptionalProtocol.swift */; };
-		AA4260AD237D135A005D4F62 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426099237D135A005D4F62 /* Identifiable.swift */; };
 		AA4260AE237D135A005D4F62 /* ViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42609A237D135A005D4F62 /* ViewBuilder.swift */; };
 		AA4260B2237D1D2F005D4F62 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260B1237D1D2F005D4F62 /* AppCoordinator.swift */; };
 		AA4260B9237D1D3D005D4F62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260B4237D1D3D005D4F62 /* BaseViewController.swift */; };
@@ -60,7 +54,6 @@
 		AA4260D1237D68AD005D4F62 /* AddCurrencyCoordinaot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D0237D68AD005D4F62 /* AddCurrencyCoordinaot.swift */; };
 		AA4260D3237D68CA005D4F62 /* AddCurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D2237D68CA005D4F62 /* AddCurrencyViewModel.swift */; };
 		AA4260D5237D68E2005D4F62 /* AddCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D4237D68E2005D4F62 /* AddCurrencyViewController.swift */; };
-		AA4260D8237D7036005D4F62 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D7237D7036005D4F62 /* Asset.swift */; };
 		AA4260DC237D8085005D4F62 /* TableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260DB237D8085005D4F62 /* TableViewDataProvider.swift */; };
 		AA4260DE237D81A1005D4F62 /* TableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260DD237D81A1005D4F62 /* TableViewProtocols.swift */; };
 		AA4260E0237D8249005D4F62 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260DF237D8249005D4F62 /* UITableView+Extension.swift */; };
@@ -117,17 +110,11 @@
 		AA426071237D1215005D4F62 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		AA426079237D1302005D4F62 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		AA426081237D135A005D4F62 /* CodableUserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableUserDefault.swift; sourceTree = "<group>"; };
-		AA426082237D135A005D4F62 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		AA426084237D135A005D4F62 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		AA426089237D135A005D4F62 /* Optional+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
 		AA42608B237D135A005D4F62 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		AA42608D237D135A005D4F62 /* URL+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
-		AA426093237D135A005D4F62 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		AA426094237D135A005D4F62 /* NSObject+AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+AssociatedObject.swift"; sourceTree = "<group>"; };
 		AA426095237D135A005D4F62 /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		AA426097237D135A005D4F62 /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
-		AA426098237D135A005D4F62 /* OptionalProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalProtocol.swift; sourceTree = "<group>"; };
-		AA426099237D135A005D4F62 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		AA42609A237D135A005D4F62 /* ViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBuilder.swift; sourceTree = "<group>"; };
 		AA4260B1237D1D2F005D4F62 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		AA4260B4237D1D3D005D4F62 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +132,6 @@
 		AA4260D0237D68AD005D4F62 /* AddCurrencyCoordinaot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyCoordinaot.swift; sourceTree = "<group>"; };
 		AA4260D2237D68CA005D4F62 /* AddCurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewModel.swift; sourceTree = "<group>"; };
 		AA4260D4237D68E2005D4F62 /* AddCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewController.swift; sourceTree = "<group>"; };
-		AA4260D7237D7036005D4F62 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		AA4260DB237D8085005D4F62 /* TableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataProvider.swift; sourceTree = "<group>"; };
 		AA4260DD237D81A1005D4F62 /* TableViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocols.swift; sourceTree = "<group>"; };
 		AA4260DF237D8249005D4F62 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -314,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				AA426081237D135A005D4F62 /* CodableUserDefault.swift */,
-				AA426082237D135A005D4F62 /* UserDefault.swift */,
 				AA426084237D135A005D4F62 /* Reachability.swift */,
 				AA4260C9237D5528005D4F62 /* Observable.swift */,
 				AA14F3E3237E8A7600B3BD4B /* AnchorMaker.swift */,
@@ -325,19 +310,10 @@
 		AA426087237D135A005D4F62 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AA426088237D135A005D4F62 /* Swift Standard Library */,
 				AA42608A237D135A005D4F62 /* UIKit */,
 				AA426092237D135A005D4F62 /* Foundation */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		AA426088237D135A005D4F62 /* Swift Standard Library */ = {
-			isa = PBXGroup;
-			children = (
-				AA426089237D135A005D4F62 /* Optional+Extension.swift */,
-			);
-			path = "Swift Standard Library";
 			sourceTree = "<group>";
 		};
 		AA42608A237D135A005D4F62 /* UIKit */ = {
@@ -345,10 +321,8 @@
 			children = (
 				AA14F3E5237E8AB400B3BD4B /* UIView+Anchors.swift */,
 				AA42608B237D135A005D4F62 /* UIFont+Extension.swift */,
-				AA42608D237D135A005D4F62 /* URL+Extension.swift */,
 				AA4260BE237D28AE005D4F62 /* UIStoryboard+Extension.swift */,
 				AA4260C1237D2904005D4F62 /* UIViewController+Extension.swift */,
-				AA4260D7237D7036005D4F62 /* Asset.swift */,
 				AA4260DF237D8249005D4F62 /* UITableView+Extension.swift */,
 			);
 			path = UIKit;
@@ -357,7 +331,6 @@
 		AA426092237D135A005D4F62 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				AA426093237D135A005D4F62 /* String+Extension.swift */,
 				AA426094237D135A005D4F62 /* NSObject+AssociatedObject.swift */,
 				AA426095237D135A005D4F62 /* Data+Extension.swift */,
 				AA14F3FF237ECF1100B3BD4B /* Array+Extension.swift */,
@@ -369,8 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				AA426097237D135A005D4F62 /* Presentable.swift */,
-				AA426098237D135A005D4F62 /* OptionalProtocol.swift */,
-				AA426099237D135A005D4F62 /* Identifiable.swift */,
 				AA42609A237D135A005D4F62 /* ViewBuilder.swift */,
 				AA4260C3237D294C005D4F62 /* StoryboardIdentifiable.swift */,
 			);
@@ -614,10 +585,8 @@
 			files = (
 				AA426072237D1215005D4F62 /* MockURLProtocol.swift in Sources */,
 				AA14F3E6237E8AB400B3BD4B /* UIView+Anchors.swift in Sources */,
-				AA4260A1237D135A005D4F62 /* Optional+Extension.swift in Sources */,
 				AA42609B237D135A005D4F62 /* CodableUserDefault.swift in Sources */,
 				AA42603B237D0EB0005D4F62 /* FisrtViewController.swift in Sources */,
-				AA42609C237D135A005D4F62 /* UserDefault.swift in Sources */,
 				AA4260E2237D8551005D4F62 /* CountryCell.swift in Sources */,
 				AA4260B9237D1D3D005D4F62 /* BaseViewController.swift in Sources */,
 				AA4260BA237D1D3D005D4F62 /* BaseViewModel.swift in Sources */,
@@ -636,10 +605,7 @@
 				AA4260BF237D28AE005D4F62 /* UIStoryboard+Extension.swift in Sources */,
 				AA14F404237EFC2800B3BD4B /* RateCell.swift in Sources */,
 				AA4260D1237D68AD005D4F62 /* AddCurrencyCoordinaot.swift in Sources */,
-				AA4260AC237D135A005D4F62 /* OptionalProtocol.swift in Sources */,
-				AA4260A8237D135A005D4F62 /* String+Extension.swift in Sources */,
 				AA426037237D0EB0005D4F62 /* AppDelegate.swift in Sources */,
-				AA4260A4237D135A005D4F62 /* URL+Extension.swift in Sources */,
 				AA4260E0237D8249005D4F62 /* UITableView+Extension.swift in Sources */,
 				AA4260DC237D8085005D4F62 /* TableViewDataProvider.swift in Sources */,
 				AA4260C6237D33AA005D4F62 /* APIProvider.swift in Sources */,
@@ -648,7 +614,6 @@
 				AA4260AA237D135A005D4F62 /* Data+Extension.swift in Sources */,
 				AA4260C2237D2904005D4F62 /* UIViewController+Extension.swift in Sources */,
 				AA426073237D1215005D4F62 /* MockService.swift in Sources */,
-				AA4260D8237D7036005D4F62 /* Asset.swift in Sources */,
 				AA426074237D1215005D4F62 /* Endpoints.swift in Sources */,
 				AA4260A9237D135A005D4F62 /* NSObject+AssociatedObject.swift in Sources */,
 				AA14F413238013D900B3BD4B /* RateService.swift in Sources */,
@@ -657,7 +622,6 @@
 				AA4260BD237D1D3D005D4F62 /* Coordinator.swift in Sources */,
 				AA4260E4237D85EE005D4F62 /* CountryItem.swift in Sources */,
 				AA4260AB237D135A005D4F62 /* Presentable.swift in Sources */,
-				AA4260AD237D135A005D4F62 /* Identifiable.swift in Sources */,
 				AA4260BB237D1D3D005D4F62 /* CoordinatorContext.swift in Sources */,
 				AA4260D5237D68E2005D4F62 /* AddCurrencyViewController.swift in Sources */,
 				AA14F400237ECF1100B3BD4B /* Array+Extension.swift in Sources */,

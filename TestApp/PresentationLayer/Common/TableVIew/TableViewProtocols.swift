@@ -7,5 +7,4 @@ protocol TableViewCell: AnyObject {
 
 protocol TableViewItem {
     var cellClassIdentifier: AnyClass { get }
-    // var cellName: String { get }
 }

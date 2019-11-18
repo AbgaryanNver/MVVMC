@@ -1,30 +1,20 @@
 import Foundation
 
-protocol RatesCoordinatorDelegate: AnyObject {
-    func addButtonAction()
-}
-
 class RatesViewModel: BaseViewModel {
-    lazy var fromCurrencyKey: CurrencyKey = rateService.key!
-    lazy var toCurrencyKeys: [CurrencyKey] = rateService.keys
     let timeService: TimeServiceProtocol
     let rateService = RateService()
 
+    var fromCurrencyKey: CurrencyKey? { rateService.key }
+    var toCurrencyKeys: [CurrencyKey] { rateService.keys }
+
     var rateItems = Observable<[TableViewItem]>([])
-    weak var flowDelegate: RatesCoordinatorDelegate?
 
     private let context: CoordinatorContext
 
     init(context: CoordinatorContext,
-         flowDelegate: RatesCoordinatorDelegate?,
-         fromCurrencyKey _: CurrencyKey,
-         toCurrencyKeys _: [CurrencyKey],
-         timeService: TimeServiceProtocol = TimeService(duration: 11),
+         timeService: TimeServiceProtocol = TimeService(duration: 1),
          title: String = "") {
-        self.flowDelegate = flowDelegate
         self.context = context
-//        self.fromCurrencyKey = fromCurrencyKey
-//        self.toCurrencyKeys = toCurrencyKeys
         self.timeService = timeService
         super.init(title: title)
     }
@@ -40,18 +30,15 @@ class RatesViewModel: BaseViewModel {
 
     func didRemove(_ item: TableViewItem) {
         if let rateItem = item as? RateItem {
-            toCurrencyKeys.removeAll { currencyKey -> Bool in
-                currencyKey == rateItem.toCurrencyKey
-            }
-            rateService.keys = toCurrencyKeys
-            if toCurrencyKeys.isEmpty {
-                rateService.key = nil
-                rateService.rate = [:]
-            }
+            rateService.removeItem(by: rateItem.toCurrencyKey)
         }
     }
 
     private func getRates() {
+        guard let fromCurrencyKey = fromCurrencyKey else {
+            return
+        }
+
         let ratePair = toCurrencyKeys.map { fromCurrencyKey.rawValue.uppercased() + $0.rawValue.uppercased() }
 
         context.restAPI.getRates(ratePair: ratePair) { [weak self] result in

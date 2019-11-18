@@ -9,7 +9,7 @@ class RateCell: UITableViewCell, TableViewCell {
     private lazy var fromAbbreviationLable = UILabel {
         $0.textAlignment = .left
         $0.textColor = .black
-        $0.font = UIFont.sfProDisplayBold22
+        $0.font = UIFont.sfProTextBold22
     }
 
     private lazy var fromCurrencyLabel = UILabel {
@@ -21,7 +21,7 @@ class RateCell: UITableViewCell, TableViewCell {
     private lazy var rateValueLable = UILabel {
         $0.textAlignment = .right
         $0.textColor = .black
-        $0.font = UIFont.sfProDisplayBold22
+        $0.font = UIFont.sfProTextBold22
     }
 
     private lazy var toCurrencyLabel = UILabel {
