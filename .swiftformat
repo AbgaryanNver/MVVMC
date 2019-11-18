@@ -1,0 +1,18 @@
+--allman false
+--header strip
+--indent 4
+--ranges no-space
+--indentcase true
+--commas inline
+--wraparguments after-first
+--wrapcollections after-first
+--closingparen same-line
+--elseposition same-line
+--empty void
+--exponentgrouping true
+--decimalgrouping 3
+--hexgrouping 4
+--octalgrouping 4
+
+--disable andOperator, strongOutlets
+

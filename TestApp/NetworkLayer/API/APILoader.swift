@@ -14,13 +14,9 @@ class APILoader<T: APIHandler> {
         if let connection = Reachability()?.connection, connection == .none {
             return completionHandler(.failure(ConectionError(message: "No Internet Connection")))
         }
-        let urlRequest = apiRequest.makeRequest(from: requestData).urlRequest
-
-//        urlSession.getAllTasks { urlSessionTask in
-//            urlSessionTask.forEach {
-//                $0.cancel()
-//            }
-//        }
+        guard let urlRequest = apiRequest.makeRequest(from: requestData)?.urlRequest else {
+            return
+        }
 
         urlSession.dataTask(with: urlRequest) { data, response, error in
             self.log(response, with: data)

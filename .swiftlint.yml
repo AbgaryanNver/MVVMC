@@ -1,0 +1,124 @@
+disabled_rules:
+  - trailing_whitespace
+  - weak_delegate
+  - todo
+  - switch_case_alignment
+  - nslocalizedstring_key
+  - duplicate_enum_cases
+
+opt_in_rules:
+  - anyobject_protocol
+  - array_init
+  - attributes
+  - closure_body_length
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - discouraged_object_literal
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+  # - explicit_acl # Явное объявление уровня видимости
+  # - explicit_top_level_acl
+  - explicit_init
+  - explicit_self
+  - extension_access_modifier
+  - fatal_error_message
+  - first_where
+  - force_unwrapping
+  - identical_operands
+  - implicit_return
+  - implicitly_unwrapped_optional
+  - joined_default_parameter
+  - last_where
+  - legacy_random
+  - let_var_whitespace
+  - literal_expression_end_indentation
+  # - lower_acl_than_parent # рефакторинг
+  # - missing_docs # включить после покрытия
+  - multiline_arguments
+  - multiline_parameters
+  - nimble_operator
+  - no_extension_access_modifier
+  # - no_grouping_extension # обсудить
+  - nslocalizedstring_key
+  - number_separator
+  - operator_usage_whitespace
+  - overridden_super_call
+  # - override_in_extension # refactoring
+  - prefixed_toplevel_constant
+  - private_action
+  - private_outlet
+  # - prohibited_interface_builder # включить после отказа от IB
+  - prohibited_super_call
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - redundant_nil_coalescing
+  - redundant_type_annotation
+  - single_test_class
+  - sorted_first_last
+  - sorted_imports
+  - static_operator
+  - switch_case_on_newline
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - untyped_error_in_catch
+  - unused_import
+  - unused_private_declaration
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace_closing_braces
+  - vertical_whitespace_opening_braces
+  - xct_specific_matcher
+  - yoda_condition
+
+# Исключения линтера (3-rd party code)
+excluded:
+  - Carthage
+  - Generated
+  - Templates
+  - AituPayTests
+  - AituPayUITests
+
+attributes:
+  always_on_same_line: ["@objc", "@IBAction", "@NSManaged"]
+
+closure_body_length:
+  - 30
+  - 50
+
+function_body_length:
+  - 39
+  - 50
+
+type_name:
+    max_length:
+        warning: 50
+        error: 60
+
+type_body_length:
+- 300 # warning
+- 1000 # error
+
+file_length:
+- 500 # warning
+- 550 # error
+
+line_length:
+ warning: 160
+ ignores_comments: true
+
+function_parameter_count:
+- 6 # warning
+- 8 # error
+
+cyclomatic_complexity:
+- 10 # warning
+- 14 # error
+
+identifier_name:
+  min_length: 3
+  excluded: ["id", "to", "ok", "in", "vc",  "vm", "on", "ui", "of"]
+

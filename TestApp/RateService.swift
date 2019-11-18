@@ -7,29 +7,30 @@ class RateService {
 
     @CodableUserDefault(key: "from", defaultValue: nil)
 
-    var key: CurrencyKey
+    var key: CurrencyKey?
 
     @CodableUserDefault(key: "to", defaultValue: [])
 
     var keys: [CurrencyKey]
 
     func getItems() -> [RateItem?] {
-        rate.filter { pair in
-
-            if let toCurrencyKey = CurrencyKey(rawValue: String(pair.key.suffix(3)).lowercased()) {
-                return keys.contains(toCurrencyKey)
+        rate
+            .filter { pair in
+                if let toCurrencyKey = CurrencyKey(rawValue: String(pair.key.suffix(3)).lowercased()) {
+                    return keys.contains(toCurrencyKey)
+                }
+                return true
             }
-            return true
-        }.map { pair in
-            let rateVale = String(format: "%.4f", pair.value)
+            .map { pair in
+                let rateVale = String(format: "%.4f", pair.value)
 
-            guard let fromCurrencyKey = CurrencyKey(rawValue: String(pair.key.prefix(3)).lowercased()),
-                let toCurrencykey = CurrencyKey(rawValue: String(pair.key.suffix(3)).lowercased()) else {
-                return nil
+                guard let fromCurrencyKey = CurrencyKey(rawValue: String(pair.key.prefix(3)).lowercased()),
+                    let toCurrencykey = CurrencyKey(rawValue: String(pair.key.suffix(3)).lowercased()) else {
+                    return nil
+                }
+
+                return RateItem(fromCurrencyKey: fromCurrencyKey, toCurrencyKey: toCurrencykey, rateValue: rateVale)
             }
-
-            return RateItem(fromCurrencyKey: fromCurrencyKey, toCurrencyKey: toCurrencykey, rateValue: rateVale)
-        }
     }
 
     func storeState(_ fromCurrencyKey: CurrencyKey, _ toCurrencyKeys: [CurrencyKey]) {

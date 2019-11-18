@@ -1,19 +1,20 @@
 import Foundation
 
 struct RateAPI: APIHandler {
-    func makeRequest(from parameters: [String]) -> Request {
-        var components = URLComponents(string: Path().ratesUrlStirng)!
+    func makeRequest(from parameters: [String]) -> Request? {
+        var components = URLComponents(string: Path().ratesUrlStirng) ?? URLComponents()
         var queryItems = [URLQueryItem]()
         for value in parameters {
             queryItems.append(URLQueryItem(name: "pairs", value: "\(value)"))
         }
 
         components.queryItems = queryItems
-        let url = components.url
-        var urlRequest = URLRequest(url: url!)
+        guard let url = components.url else {
+            return nil
+        }
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = HTTPMethod.get.rawValue
         let request = Request(urlRequest: urlRequest)
-
         return request
     }
 

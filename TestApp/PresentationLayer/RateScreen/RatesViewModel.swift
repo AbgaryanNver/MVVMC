@@ -19,7 +19,7 @@ class RatesViewModel: BaseViewModel {
          flowDelegate: RatesCoordinatorDelegate?,
          fromCurrencyKey: CurrencyKey,
          toCurrencyKeys: [CurrencyKey],
-         timeService: TimeServiceProtocol = TimeService(duration: 11),
+         timeService: TimeServiceProtocol = TimeService(duration: 1),
          title: String = "") {
         self.flowDelegate = flowDelegate
         self.context = context
@@ -44,6 +44,9 @@ class RatesViewModel: BaseViewModel {
                 currencyKey == rateItem.toCurrencyKey
             }
             rateService.keys = toCurrencyKeys
+            if toCurrencyKeys.isEmpty {
+                rateService.key = nil
+            }
         }
     }
 

@@ -5,7 +5,7 @@ typealias APIHandler = RequestHandler & ResponseHandler
 protocol RequestHandler {
     associatedtype RequestDataType
 
-    func makeRequest(from data: RequestDataType) -> Request
+    func makeRequest(from data: RequestDataType) -> Request?
 }
 
 protocol ResponseHandler {
