@@ -14,23 +14,16 @@ class RateService {
     var keys: [CurrencyKey]
 
     func getItems() -> [RateItem?] {
-        rate
-            .filter { pair in
-                if let toCurrencyKey = CurrencyKey(rawValue: String(pair.key.suffix(3)).lowercased()) {
-                    return keys.contains(toCurrencyKey)
-                }
-                return true
+        keys.map { toKey in
+            guard let fromCurrencyKey = key else {
+                return nil
             }
-            .map { pair in
-                let rateVale = String(format: "%.4f", pair.value)
+            let dicKey = fromCurrencyKey.rawValue.uppercased() + toKey.rawValue.uppercased()
+            let rateValue = rate.first { $0.key == dicKey }?.value
+            let rateStringVale = String(format: "%.4f", rateValue ?? 0.0)
 
-                guard let fromCurrencyKey = CurrencyKey(rawValue: String(pair.key.prefix(3)).lowercased()),
-                    let toCurrencykey = CurrencyKey(rawValue: String(pair.key.suffix(3)).lowercased()) else {
-                    return nil
-                }
-
-                return RateItem(fromCurrencyKey: fromCurrencyKey, toCurrencyKey: toCurrencykey, rateValue: rateVale)
-            }
+            return RateItem(fromCurrencyKey: fromCurrencyKey, toCurrencyKey: toKey, rateValue: rateStringVale)
+        }
     }
 
     func storeState(_ fromCurrencyKey: CurrencyKey, _ toCurrencyKeys: [CurrencyKey]) {

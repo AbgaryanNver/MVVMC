@@ -3,8 +3,8 @@ import UIKit
 class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
     private let tableViewDataProvider = TableViewDataProvider()
     private lazy var tableView = UITableView()
-
     private lazy var nextBarButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButtonAction))
+    private lazy var backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
 
     private lazy var indicatorView = UIActivityIndicatorView {
         $0.style = .gray
@@ -20,6 +20,7 @@ class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
         super.setupUI()
         view.backgroundColor = .red
         navigationItem.rightBarButtonItem = nextBarButton
+        navigationItem.leftBarButtonItem = backButton
         nextBarButton.isEnabled = false
         tableViewDataProvider.configure(tableView: tableView, onTapCell: { [weak self] indexPath in
             self?.viewModel.didTapedCell(at: indexPath)

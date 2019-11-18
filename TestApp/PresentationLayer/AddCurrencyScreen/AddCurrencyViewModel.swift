@@ -16,7 +16,6 @@ class AddCurrencyViewModel: BaseViewModel {
         self.flowDelegate = flowDelegate
         self.context = context
         super.init(title: title)
-        setItems()
     }
 
     func setItems() {
@@ -45,7 +44,7 @@ class AddCurrencyViewModel: BaseViewModel {
                 item.isMainItem = true
                 dataSource.value[indexPath.row] = item
                 return
-            } else if !item.isSelected {
+            } else if !item.isSelected && !item.isMainItem {
                 item.isSelected = true
                 dataSource.value[indexPath.row] = item
                 let toCurrencyKeys = dataSource.value.filter { $0.isSelected }.map { $0.key }

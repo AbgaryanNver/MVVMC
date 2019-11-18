@@ -27,26 +27,42 @@
             filePath = "TestApp/PresentationLayer/AddCurrencyScreen/AddCurrencyViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "setItems()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3039C6A5-A236-46BE-88B2-3AFA6711CFF7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestApp/PresentationLayer/AddCurrencyScreen/AddCurrencyViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "setItems()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C25C20B5-DD1F-4529-A5AC-9D7CCAB95F55 - c78f45978585a3b6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestApp.AddCurrencyViewModel.setItems() -&gt; ()"
+                  moduleName = "TestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/btsd/Workspace/TestApp/TestApp/PresentationLayer/AddCurrencyScreen/AddCurrencyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  uuid = "C25C20B5-DD1F-4529-A5AC-9D7CCAB95F55 - afbf6dac7dc3793d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TestApp.CurrencyKey) -&gt; TestApp.CountryItem in TestApp.AddCurrencyViewModel.setItems() -&gt; ()"
+                  moduleName = "TestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/btsd/Workspace/TestApp/TestApp/PresentationLayer/AddCurrencyScreen/AddCurrencyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "153">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -59,8 +75,8 @@
             filePath = "TestApp/PresentationLayer/AddCurrencyScreen/AddCurrencyViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "setItems()"
             landmarkType = "7">
          </BreakpointContent>
@@ -116,17 +132,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A4ACE432-81A3-4266-B7CC-EF13E697321F"
-            shouldBeEnabled = "Yes"
+            uuid = "D1D8A984-B564-4CE8-AC26-B4153A389C72"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestApp/PresentationLayer/Common/TableVIew/TableViewDataProvider.swift"
+            filePath = "TestApp/PresentationLayer/AddCurrencyScreen/AddCurrencyViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "dataSource"
-            landmarkType = "24">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "setItems()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

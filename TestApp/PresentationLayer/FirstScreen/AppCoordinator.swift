@@ -2,7 +2,6 @@ import UIKit
 
 class AppCoordinator: NavigationCoordinator {
     let window: UIWindow?
-
     private let navigationController = BaseNavigationVC()
 
     init(context: CoordinatorContext, window: UIWindow?) {
@@ -13,17 +12,10 @@ class AppCoordinator: NavigationCoordinator {
     override func start(animated _: Bool) {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        let isPreSaved = false
-        if isPreSaved {
-            // push(firstViewController, animated: false)
-        } else {
-            let storyboard = UIStoryboard(storyboard: .first)
-            let firstViewController: FirstViewController = storyboard.instantiateViewController()
-            firstViewController.flowDelegate = self
-            firstViewController.modalPresentationStyle = .overFullScreen
-            push(firstViewController, animated: false)
-            // present(firstViewController, animated: false)
-        }
+        let storyboard = UIStoryboard(storyboard: .first)
+        let firstViewController: FirstViewController = storyboard.instantiateViewController()
+        firstViewController.flowDelegate = self
+        push(firstViewController, animated: false)
     }
 }
 

@@ -5,8 +5,8 @@ protocol RatesCoordinatorDelegate: AnyObject {
 }
 
 class RatesViewModel: BaseViewModel {
-    let fromCurrencyKey: CurrencyKey
-    var toCurrencyKeys: [CurrencyKey]
+    lazy var fromCurrencyKey: CurrencyKey = rateService.key!
+    lazy var toCurrencyKeys: [CurrencyKey] = rateService.keys
     let timeService: TimeServiceProtocol
     let rateService = RateService()
 
@@ -17,14 +17,14 @@ class RatesViewModel: BaseViewModel {
 
     init(context: CoordinatorContext,
          flowDelegate: RatesCoordinatorDelegate?,
-         fromCurrencyKey: CurrencyKey,
-         toCurrencyKeys: [CurrencyKey],
-         timeService: TimeServiceProtocol = TimeService(duration: 1),
+         fromCurrencyKey _: CurrencyKey,
+         toCurrencyKeys _: [CurrencyKey],
+         timeService: TimeServiceProtocol = TimeService(duration: 11),
          title: String = "") {
         self.flowDelegate = flowDelegate
         self.context = context
-        self.fromCurrencyKey = fromCurrencyKey
-        self.toCurrencyKeys = toCurrencyKeys
+//        self.fromCurrencyKey = fromCurrencyKey
+//        self.toCurrencyKeys = toCurrencyKeys
         self.timeService = timeService
         super.init(title: title)
     }
@@ -46,6 +46,7 @@ class RatesViewModel: BaseViewModel {
             rateService.keys = toCurrencyKeys
             if toCurrencyKeys.isEmpty {
                 rateService.key = nil
+                rateService.rate = [:]
             }
         }
     }
@@ -72,8 +73,7 @@ class RatesViewModel: BaseViewModel {
 
     private func setItems() {
         let items = rateService.getItems()
-        let sortedItems = items.compactMap { $0 }.sorted { $0.toCurrencyKey.rawValue < $1.toCurrencyKey.rawValue }
-        rateItems.value = sortedItems
+        rateItems.value = items.compactMap { $0 }
     }
 }
 
