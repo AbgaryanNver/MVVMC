@@ -14,13 +14,9 @@ extension UIView {
                                                 to view: UIView,
                                                 _ viewAnchorPath: KeyPath<UIView, ViewAnchor>,
                                                 constant: CGFloat = 0,
-                                                identifier: String,
-                                                priority: UILayoutPriority?) where Anchor: NSLayoutAnchor<AnchorType>, ViewAnchor: NSLayoutAnchor<AnchorType> {
+                                                identifier: String) where Anchor: NSLayoutAnchor<AnchorType>, ViewAnchor: NSLayoutAnchor<AnchorType> {
         translatesAutoresizingMaskIntoConstraints = false
         let constraint = self[keyPath: anchorPath].constraint(equalTo: view[keyPath: viewAnchorPath], constant: constant)
-        if let priority = priority {
-            constraint.priority = priority
-        }
         constraint.isActive = true
         constraint.identifier = identifier
     }
@@ -32,14 +28,5 @@ extension UIView {
      */
     func makeAnchors(_ completion: AnchorMakerCompletion) {
         AnchorMaker.prepareAnchors(view: self, completion: completion)
-    }
-
-    /**
-     In this block can describe view constraint setting using AnchorMaker abstractions
-
-     - note: nextButton.updateAnchors { $0.height.equalTo(16) }
-     */
-    func updateAnchors(_ completion: AnchorMakerCompletion) {
-        AnchorMaker.updateAnchors(view: self, completion: completion)
     }
 }

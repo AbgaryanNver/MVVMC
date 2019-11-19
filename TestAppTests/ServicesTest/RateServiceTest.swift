@@ -22,7 +22,6 @@ class RateServiceTest: XCTestCase {
         XCTAssert(sut.getItems().isEmpty, "items array should be empty")
 
         // add first element
-        sut.clear()
         sut.storeState(CurrencyKey.gbp)
         XCTAssert(sut.getItems().isEmpty, "items array should be empty")
 

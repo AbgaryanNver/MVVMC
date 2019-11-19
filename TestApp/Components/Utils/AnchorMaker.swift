@@ -362,8 +362,7 @@ final class AnchorMaker {
                         to: description.relatedView ?? superview,
                         relatedAnchorPath,
                         constant: description.offset,
-                        identifier: description.identifier,
-                        priority: description.priority)
+                        identifier: description.identifier)
         }
     }
 
@@ -375,8 +374,7 @@ final class AnchorMaker {
                         to: description.relatedView ?? superview,
                         relatedAnchorPath,
                         constant: description.offset,
-                        identifier: description.identifier,
-                        priority: description.priority)
+                        identifier: description.identifier)
         }
     }
 

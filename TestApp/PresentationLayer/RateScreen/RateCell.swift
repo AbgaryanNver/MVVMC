@@ -1,7 +1,7 @@
 import UIKit
 
 class RateCell: UITableViewCell, TableViewCell {
-    enum Constatns {
+    enum Constants {
         static let height: CGFloat = 24
         static let offset: CGFloat = 16
     }
@@ -35,21 +35,21 @@ class RateCell: UITableViewCell, TableViewCell {
         selectionStyle = UITableViewCell.SelectionStyle.none
         contentView.addSubview(fromAbbreviationLable)
         fromAbbreviationLable.makeAnchors {
-            $0.leading.top.equalToSuperview(Constatns.offset)
-            $0.height.equalTo(Constatns.height)
+            $0.leading.top.equalToSuperview(Constants.offset)
+            $0.height.equalTo(Constants.height)
         }
 
         contentView.addSubview(fromCurrencyLabel)
         fromCurrencyLabel.makeAnchors {
             $0.leading.equalTo(fromAbbreviationLable, anchor: .leading)
             $0.top.equalTo(fromAbbreviationLable, anchor: .bottom)
-            $0.height.equalTo(Constatns.height)
+            $0.height.equalTo(Constants.height)
             $0.bottom.equalToSuperview()
         }
 
         contentView.addSubview(rateValueLable)
         rateValueLable.makeAnchors {
-            $0.trailing.equalToSuperview(-Constatns.offset)
+            $0.trailing.equalToSuperview(-Constants.offset)
             $0.centerY.equalTo(fromAbbreviationLable, anchor: .centerY)
         }
 
