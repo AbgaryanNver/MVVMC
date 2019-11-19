@@ -6,7 +6,9 @@ protocol AddCurrencyCoordinatorDelgate: AnyObject {
 
 class AddCurrencyViewModel: BaseViewModel {
     let context: CoordinatorContext
-    var dataSource = Observable<[CountryItem]>([])
+    let allKeys: [CurrencyKey]
+
+    var dataSource = Observable<[TableViewItem]>([])
     var isLoading = Observable<Bool>(false)
     var isNextButtonActive = Observable<Bool>(false)
     weak var flowDelegate: AddCurrencyCoordinatorDelgate?
@@ -14,9 +16,10 @@ class AddCurrencyViewModel: BaseViewModel {
     var fromCurrencyKey: CurrencyKey? { context.rateService.key }
     var toCurrencyKeys: [CurrencyKey] { context.rateService.keys }
 
-    init(context: CoordinatorContext, flowDelegate: AddCurrencyCoordinatorDelgate?, title: String = "") {
+    init(context: CoordinatorContext, flowDelegate: AddCurrencyCoordinatorDelgate?, allKeys: [CurrencyKey] = CurrencyKey.allCases, title: String = "") {
         self.flowDelegate = flowDelegate
         self.context = context
+        self.allKeys = allKeys
         super.init(title: title)
     }
 
@@ -37,53 +40,41 @@ class AddCurrencyViewModel: BaseViewModel {
     }
 
     func didTapedCell(at indexPath: IndexPath) {
-        if var item = dataSource.value[safe: indexPath.row] {
-            let fromRateMainItem = dataSource.value.first { $0.isMainItem }
-            if fromRateMainItem == nil {
-                item.isMainItem = true
-                dataSource.value[indexPath.row] = item
-                return
-            } else if !item.isSelected && !item.isMainItem {
-                item.isSelected = true
-                dataSource.value[indexPath.row] = item
-                let toCurrencyKeys = dataSource.value.filter { $0.isSelected }.map { $0.key }
-                guard let fromCurrencyKey = fromRateMainItem?.key else {
-                    return
-                }
-                context.rateService.storeState(fromCurrencyKey, toCurrencyKeys)
-                getRates()
-            }
+        if let item = dataSource.value[safe: indexPath.row] as? CountryItem {
+            context.rateService.storeState(item.key)
+            setItems()
+            getRates()
         }
     }
 
     private func getRates() {
-        if context.rateService.rate.count == toCurrencyKeys.count {
-            flowDelegate?.didTapedCell()
+        guard let fromCurrencyKey = fromCurrencyKey, !toCurrencyKeys.isEmpty else {
             return
         }
-
-        guard let fromCurrencyKey = fromCurrencyKey else {
-            return
-        }
-
-        let ratePair = CurrencyKey.allCases.map { fromCurrencyKey.rawValue.uppercased() + $0.rawValue.uppercased() }
-        isLoading.value = true
-        context.restAPI.getRates(ratePair: ratePair) { [weak self] result in
-            DispatchQueue.main.async {
-                guard let self = self else {
-                    return
-                }
-                self.isLoading.value = false
-                switch result {
-                    case let .success(response):
-                        if let response = response {
-                            self.context.rateService.rate = response
-                            self.flowDelegate?.didTapedCell()
-                        }
-                    case let .failure(error):
-                        print(error)
-                }
-            }
-        }
+        flowDelegate?.didTapedCell()
+//        if context.rateService.rate.count == toCurrencyKeys.count {
+//
+//            return
+//        }
+//
+//        let ratePair = CurrencyKey.allCases.map { fromCurrencyKey.keyName + $0.keyName }
+//        isLoading.value = true
+//        context.restAPI.getRates(ratePair: ratePair) { [weak self] result in
+//            DispatchQueue.main.async {
+//                guard let self = self else {
+//                    return
+//                }
+//                self.isLoading.value = false
+//                switch result {
+//                    case let .success(response):
+//                        if let response = response {
+//                            self.context.rateService.rate = response
+//                            self.flowDelegate?.didTapedCell()
+//                        }
+//                    case let .failure(error):
+//                        print(error)
+//                }
+//            }
+//        }
     }
 }

@@ -6,10 +6,10 @@ struct CodableUserDefault<T: Codable> {
     let defaultValue: T
     let suitName: String?
 
-    init(key: String, defaultValue: T, suitName: String? = nil) {
+    init(key: String, defaultValue: T) {
         self.key = key
         self.defaultValue = defaultValue
-        self.suitName = suitName
+        suitName = NSClassFromString("XCTestCase") != nil ? "mock" : nil
     }
 
     var wrappedValue: T {

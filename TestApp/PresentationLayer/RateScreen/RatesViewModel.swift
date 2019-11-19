@@ -39,7 +39,7 @@ class RatesViewModel: BaseViewModel {
             return
         }
 
-        let ratePair = toCurrencyKeys.map { fromCurrencyKey.rawValue.uppercased() + $0.rawValue.uppercased() }
+        let ratePair = toCurrencyKeys.map { fromCurrencyKey.keyName + $0.keyName }
 
         context.restAPI.getRates(ratePair: ratePair) { [weak self] result in
             guard let self = self else {
@@ -59,8 +59,7 @@ class RatesViewModel: BaseViewModel {
     }
 
     private func setItems() {
-        let items = rateService.getItems()
-        rateItems.value = items.compactMap { $0 }
+        rateItems.value = rateService.getItems()
     }
 }
 

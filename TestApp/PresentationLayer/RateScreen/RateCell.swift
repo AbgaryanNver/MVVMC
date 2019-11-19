@@ -76,9 +76,9 @@ class RateCell: UITableViewCell, TableViewCell {
             return
         }
 
-        fromAbbreviationLable.text = "1" + " " + item.fromCurrencyKey.rawValue.uppercased()
+        fromAbbreviationLable.text = "1" + " " + item.fromCurrencyKey.keyName
         fromCurrencyLabel.text = item.fromCurrencyKey.currency
-        toCurrencyLabel.text = item.toCurrencyKey.currency + item.toCurrencyKey.rawValue.uppercased()
+        toCurrencyLabel.text = item.toCurrencyKey.currency + " " + item.toCurrencyKey.keyName
         rateValueLable.text = item.rateValue
 
         let attributedString = NSMutableAttributedString(string: item.rateValue)

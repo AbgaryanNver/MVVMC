@@ -2,7 +2,7 @@ import UIKit
 
 class RatesViewController: BaseViewController<RatesViewModel> {
     private let tableViewDataProvider = TableViewDataProvider()
-    private let tableView = UITableView()
+    private lazy var tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()

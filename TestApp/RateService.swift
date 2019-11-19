@@ -13,22 +13,17 @@ class RateService {
 
     var keys: [CurrencyKey]
 
-    func getItems() -> [RateItem?] {
-        keys.map { toKey in
-            guard let fromCurrencyKey = key else {
-                return nil
-            }
-            let dicKey = fromCurrencyKey.rawValue.uppercased() + toKey.rawValue.uppercased()
+    func getItems() -> [RateItem] {
+        guard let fromCurrencyKey = key else {
+            return []
+        }
+        return keys.map { toKey in
+            let dicKey = fromCurrencyKey.keyName + toKey.keyName
             let rateValue = rate.first { $0.key == dicKey }?.value
             let rateStringVale = String(format: "%.4f", rateValue ?? 0.0)
 
             return RateItem(fromCurrencyKey: fromCurrencyKey, toCurrencyKey: toKey, rateValue: rateStringVale)
         }
-    }
-
-    func storeState(_ fromCurrencyKey: CurrencyKey, _ toCurrencyKeys: [CurrencyKey]) {
-        key = fromCurrencyKey
-        keys = toCurrencyKeys
     }
 
     func removeItem(by key: CurrencyKey) {
@@ -39,6 +34,23 @@ class RateService {
             self.key = nil
             rate = [:]
         }
+    }
+
+    func storeState(_ currencyKey: CurrencyKey) {
+        if key == nil {
+            key = currencyKey
+            return
+        }
+
+        if !keys.contains(currencyKey), key != currencyKey {
+            keys.append(currencyKey)
+        }
+    }
+
+    func clear() {
+        key = nil
+        keys = []
+        rate = [:]
     }
 }
 
@@ -97,5 +109,9 @@ enum CurrencyKey: String, CaseIterable, Codable {
             case .hkd:
                 return "HK"
         }
+    }
+
+    var keyName: String {
+        rawValue.uppercased()
     }
 }

@@ -74,7 +74,7 @@ class CountryCell: UITableViewCell, TableViewCell {
         }
 
         moneyNameLabel.text = item.key.currency
-        abbreviationNameLabel.text = item.key.rawValue.uppercased()
+        abbreviationNameLabel.text = item.key.keyName
         countryFlagImageView.image = UIImage(named: item.key.imageName)
     }
 

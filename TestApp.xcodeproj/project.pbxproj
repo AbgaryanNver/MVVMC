@@ -59,6 +59,10 @@
 		AA4260E0237D8249005D4F62 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260DF237D8249005D4F62 /* UITableView+Extension.swift */; };
 		AA4260E2237D8551005D4F62 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260E1237D8551005D4F62 /* CountryCell.swift */; };
 		AA4260E4237D85EE005D4F62 /* CountryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260E3237D85EE005D4F62 /* CountryItem.swift */; };
+		AA4CB5F62382CD24004DD81C /* RateAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5F52382CD24004DD81C /* RateAPITest.swift */; };
+		AA4CB5F82382E358004DD81C /* APILoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5F72382E358004DD81C /* APILoaderTests.swift */; };
+		AA4CB5FE2382EE8B004DD81C /* TimeServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5FD2382EE8B004DD81C /* TimeServiceTest.swift */; };
+		AA4CB6002382EE99004DD81C /* RateServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5FF2382EE99004DD81C /* RateServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,10 @@
 		AA4260DF237D8249005D4F62 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		AA4260E1237D8551005D4F62 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		AA4260E3237D85EE005D4F62 /* CountryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItem.swift; sourceTree = "<group>"; };
+		AA4CB5F52382CD24004DD81C /* RateAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAPITest.swift; sourceTree = "<group>"; };
+		AA4CB5F72382E358004DD81C /* APILoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoaderTests.swift; sourceTree = "<group>"; };
+		AA4CB5FD2382EE8B004DD81C /* TimeServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeServiceTest.swift; sourceTree = "<group>"; };
+		AA4CB5FF2382EE99004DD81C /* RateServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +209,10 @@
 		AA42604C237D0EB1005D4F62 /* TestAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA4CB5FC2382EDAA004DD81C /* ServicesTest */,
+				AA4CB5F42382CCE2004DD81C /* NetworkLayerTest */,
+				AA4CB5FA2382ED33004DD81C /* AddCurrencyModuleTest */,
+				AA4CB5FB2382ED65004DD81C /* RateModuleTest */,
 				AA42604D237D0EB1005D4F62 /* TestAppTests.swift */,
 				AA42604F237D0EB1005D4F62 /* Info.plist */,
 			);
@@ -239,6 +251,7 @@
 		AA426068237D0F62005D4F62 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				AA14F3E5237E8AB400B3BD4B /* UIView+Anchors.swift */,
 				AA4260D9237D805E005D4F62 /* Common */,
 				AA4260B3237D1D3D005D4F62 /* Base */,
 				AA4260CC237D5851005D4F62 /* FirstScreen */,
@@ -251,7 +264,6 @@
 		AA426069237D1215005D4F62 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				AA42606A237D1215005D4F62 /* Mock */,
 				AA42606D237D1215005D4F62 /* common */,
 				AA426070237D1215005D4F62 /* APILoader.swift */,
 				AA426071237D1215005D4F62 /* APIHandler.swift */,
@@ -289,8 +301,8 @@
 		AA42607F237D135A005D4F62 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				AA426080237D135A005D4F62 /* Utils */,
 				AA426087237D135A005D4F62 /* Extensions */,
+				AA426080237D135A005D4F62 /* Utils */,
 				AA426096237D135A005D4F62 /* Protocols */,
 			);
 			path = Components;
@@ -319,7 +331,6 @@
 		AA42608A237D135A005D4F62 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				AA14F3E5237E8AB400B3BD4B /* UIView+Anchors.swift */,
 				AA42608B237D135A005D4F62 /* UIFont+Extension.swift */,
 				AA4260BE237D28AE005D4F62 /* UIStoryboard+Extension.swift */,
 				AA4260C1237D2904005D4F62 /* UIViewController+Extension.swift */,
@@ -410,6 +421,39 @@
 				AA4260DD237D81A1005D4F62 /* TableViewProtocols.swift */,
 			);
 			path = TableVIew;
+			sourceTree = "<group>";
+		};
+		AA4CB5F42382CCE2004DD81C /* NetworkLayerTest */ = {
+			isa = PBXGroup;
+			children = (
+				AA42606A237D1215005D4F62 /* Mock */,
+				AA4CB5F52382CD24004DD81C /* RateAPITest.swift */,
+				AA4CB5F72382E358004DD81C /* APILoaderTests.swift */,
+			);
+			path = NetworkLayerTest;
+			sourceTree = "<group>";
+		};
+		AA4CB5FA2382ED33004DD81C /* AddCurrencyModuleTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddCurrencyModuleTest;
+			sourceTree = "<group>";
+		};
+		AA4CB5FB2382ED65004DD81C /* RateModuleTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RateModuleTest;
+			sourceTree = "<group>";
+		};
+		AA4CB5FC2382EDAA004DD81C /* ServicesTest */ = {
+			isa = PBXGroup;
+			children = (
+				AA4CB5FD2382EE8B004DD81C /* TimeServiceTest.swift */,
+				AA4CB5FF2382EE99004DD81C /* RateServiceTest.swift */,
+			);
+			path = ServicesTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -637,7 +681,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA4CB5FE2382EE8B004DD81C /* TimeServiceTest.swift in Sources */,
+				AA4CB5F62382CD24004DD81C /* RateAPITest.swift in Sources */,
+				AA4CB5F82382E358004DD81C /* APILoaderTests.swift in Sources */,
 				AA42604E237D0EB1005D4F62 /* TestAppTests.swift in Sources */,
+				AA4CB6002382EE99004DD81C /* RateServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

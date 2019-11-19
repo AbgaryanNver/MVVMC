@@ -20,9 +20,7 @@ class MockURLProtocol: URLProtocol {
             let (response, data) = try handler(request)
             client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
             client?.urlProtocol(self, didLoad: data)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.client?.urlProtocolDidFinishLoading(self)
-            }
+            client?.urlProtocolDidFinishLoading(self)
         } catch {
             client?.urlProtocol(self, didFailWithError: error)
         }

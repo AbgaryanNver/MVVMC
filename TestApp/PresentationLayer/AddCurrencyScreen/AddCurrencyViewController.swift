@@ -44,11 +44,15 @@ class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
             self?.setDataSourceForTableView(items)
         }
 
-        viewModel.isLoading.addObserver { [weak self] isLoading in
+        viewModel.isLoading.addObserver(fireNow: false) { [weak self] isLoading in
+            print("NNN: isloading = \(isLoading)")
             self?.tableView.isUserInteractionEnabled = !isLoading
             if isLoading {
                 self?.indicatorView.startAnimating()
                 self?.navigationItem.rightBarButtonItem = self?.indicatorButton
+            } else {
+                self?.indicatorView.stopAnimating()
+                self?.navigationItem.rightBarButtonItem = self?.nextBarButton
             }
         }
 
