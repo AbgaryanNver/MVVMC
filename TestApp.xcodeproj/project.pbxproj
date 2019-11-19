@@ -47,10 +47,8 @@
 		AA4260C2237D2904005D4F62 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260C1237D2904005D4F62 /* UIViewController+Extension.swift */; };
 		AA4260C4237D294C005D4F62 /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260C3237D294C005D4F62 /* StoryboardIdentifiable.swift */; };
 		AA4260C6237D33AA005D4F62 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260C5237D33AA005D4F62 /* APIProvider.swift */; };
-		AA4260C8237D34D8005D4F62 /* RateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260C7237D34D8005D4F62 /* RateResponse.swift */; };
 		AA4260CA237D5528005D4F62 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260C9237D5528005D4F62 /* Observable.swift */; };
-		AA4260CF237D58BF005D4F62 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260CE237D58BF005D4F62 /* FirstViewModel.swift */; };
-		AA4260D1237D68AD005D4F62 /* CurrencyCoordinaot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D0237D68AD005D4F62 /* CurrencyCoordinaot.swift */; };
+		AA4260D1237D68AD005D4F62 /* CurrencyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D0237D68AD005D4F62 /* CurrencyCoordinator.swift */; };
 		AA4260D3237D68CA005D4F62 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D2237D68CA005D4F62 /* CurrencyViewModel.swift */; };
 		AA4260D5237D68E2005D4F62 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D4237D68E2005D4F62 /* CurrencyViewController.swift */; };
 		AA4260DC237D8085005D4F62 /* TableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260DB237D8085005D4F62 /* TableViewDataProvider.swift */; };
@@ -62,7 +60,6 @@
 		AA4CB5F82382E358004DD81C /* APILoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5F72382E358004DD81C /* APILoaderTests.swift */; };
 		AA4CB6002382EE99004DD81C /* RateServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5FF2382EE99004DD81C /* RateServiceTest.swift */; };
 		AA4CB6042383C9BE004DD81C /* CurrencyViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB6032383C9BE004DD81C /* CurrencyViewModelTest.swift */; };
-		AA4CB6092383CBD6004DD81C /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB6082383CBD6004DD81C /* AutoMockable.swift */; };
 		AA4CB60C2383E4E3004DD81C /* CoordinatorContextMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB60B2383E4E3004DD81C /* CoordinatorContextMock.swift */; };
 		AA4CB60E23840B33004DD81C /* RateViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB60D23840B33004DD81C /* RateViewModelTest.swift */; };
 		AA4CB61023841A58004DD81C /* RateServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB60F23841A58004DD81C /* RateServiceMock.swift */; };
@@ -125,10 +122,8 @@
 		AA4260C1237D2904005D4F62 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		AA4260C3237D294C005D4F62 /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
 		AA4260C5237D33AA005D4F62 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
-		AA4260C7237D34D8005D4F62 /* RateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateResponse.swift; sourceTree = "<group>"; };
 		AA4260C9237D5528005D4F62 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		AA4260CE237D58BF005D4F62 /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
-		AA4260D0237D68AD005D4F62 /* CurrencyCoordinaot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCoordinaot.swift; sourceTree = "<group>"; };
+		AA4260D0237D68AD005D4F62 /* CurrencyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCoordinator.swift; sourceTree = "<group>"; };
 		AA4260D2237D68CA005D4F62 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		AA4260D4237D68E2005D4F62 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		AA4260DB237D8085005D4F62 /* TableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataProvider.swift; sourceTree = "<group>"; };
@@ -140,7 +135,6 @@
 		AA4CB5F72382E358004DD81C /* APILoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoaderTests.swift; sourceTree = "<group>"; };
 		AA4CB5FF2382EE99004DD81C /* RateServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateServiceTest.swift; sourceTree = "<group>"; };
 		AA4CB6032383C9BE004DD81C /* CurrencyViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelTest.swift; sourceTree = "<group>"; };
-		AA4CB6082383CBD6004DD81C /* AutoMockable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
 		AA4CB60B2383E4E3004DD81C /* CoordinatorContextMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorContextMock.swift; sourceTree = "<group>"; };
 		AA4CB60D23840B33004DD81C /* RateViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewModelTest.swift; sourceTree = "<group>"; };
 		AA4CB60F23841A58004DD81C /* RateServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateServiceMock.swift; sourceTree = "<group>"; };
@@ -201,7 +195,6 @@
 		AA42604C237D0EB1005D4F62 /* TestAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA4CB6072383CBD6004DD81C /* Generated */,
 				AA4CB5FC2382EDAA004DD81C /* ServicesTest */,
 				AA4CB5F42382CCE2004DD81C /* NetworkLayerTest */,
 				AA4CB5FA2382ED33004DD81C /* CurrencyModuleTest */,
@@ -281,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				AA426079237D1302005D4F62 /* APIError.swift */,
-				AA4260C7237D34D8005D4F62 /* RateResponse.swift */,
 			);
 			path = RESTModels;
 			sourceTree = "<group>";
@@ -377,7 +369,6 @@
 				AA4260B1237D1D2F005D4F62 /* AppCoordinator.swift */,
 				AA42603C237D0EB0005D4F62 /* First.storyboard */,
 				AA42603A237D0EB0005D4F62 /* FisrtViewController.swift */,
-				AA4260CE237D58BF005D4F62 /* FirstViewModel.swift */,
 			);
 			path = FirstScreen;
 			sourceTree = "<group>";
@@ -385,7 +376,7 @@
 		AA4260CD237D5883005D4F62 /* CurrencyScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AA4260D0237D68AD005D4F62 /* CurrencyCoordinaot.swift */,
+				AA4260D0237D68AD005D4F62 /* CurrencyCoordinator.swift */,
 				AA4260D4237D68E2005D4F62 /* CurrencyViewController.swift */,
 				AA4260D2237D68CA005D4F62 /* CurrencyViewModel.swift */,
 				AA4260E1237D8551005D4F62 /* CountryCell.swift */,
@@ -445,14 +436,6 @@
 			path = ServicesTest;
 			sourceTree = "<group>";
 		};
-		AA4CB6072383CBD6004DD81C /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				AA4CB6082383CBD6004DD81C /* AutoMockable.swift */,
-			);
-			path = Generated;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -482,7 +465,6 @@
 				AA426045237D0EB1005D4F62 /* Sources */,
 				AA426046237D0EB1005D4F62 /* Frameworks */,
 				AA426047237D0EB1005D4F62 /* Resources */,
-				AA4CB60A2383CCDD004DD81C /* Sourcery */,
 			);
 			buildRules = (
 			);
@@ -588,24 +570,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftformat >/dev/null; then\n        swiftformat .\n    else\n        sh setup.sh\n    fi\nfi\n";
 		};
-		AA4CB60A2383CCDD004DD81C /* Sourcery */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Sourcery;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "sourcery\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -625,8 +589,6 @@
 				AA426077237D1215005D4F62 /* APIHandler.swift in Sources */,
 				AA14F40A237EFC6900B3BD4B /* RatesCoordinator.swift in Sources */,
 				AA4260C4237D294C005D4F62 /* StoryboardIdentifiable.swift in Sources */,
-				AA4260CF237D58BF005D4F62 /* FirstViewModel.swift in Sources */,
-				AA4260C8237D34D8005D4F62 /* RateResponse.swift in Sources */,
 				AA4260D3237D68CA005D4F62 /* CurrencyViewModel.swift in Sources */,
 				AA4260CA237D5528005D4F62 /* Observable.swift in Sources */,
 				AA14F41123800B0E00B3BD4B /* TimeService.swift in Sources */,
@@ -634,7 +596,7 @@
 				AA426075237D1215005D4F62 /* HTTPMethod.swift in Sources */,
 				AA4260BF237D28AE005D4F62 /* UIStoryboard+Extension.swift in Sources */,
 				AA14F404237EFC2800B3BD4B /* RateCell.swift in Sources */,
-				AA4260D1237D68AD005D4F62 /* CurrencyCoordinaot.swift in Sources */,
+				AA4260D1237D68AD005D4F62 /* CurrencyCoordinator.swift in Sources */,
 				AA426037237D0EB0005D4F62 /* AppDelegate.swift in Sources */,
 				AA4260E0237D8249005D4F62 /* UITableView+Extension.swift in Sources */,
 				AA4260DC237D8085005D4F62 /* TableViewDataProvider.swift in Sources */,
@@ -670,7 +632,6 @@
 				AA4CB6042383C9BE004DD81C /* CurrencyViewModelTest.swift in Sources */,
 				AA4CB60C2383E4E3004DD81C /* CoordinatorContextMock.swift in Sources */,
 				AA4CB61223843236004DD81C /* TimeServiceProtocolMock.swift in Sources */,
-				AA4CB6092383CBD6004DD81C /* AutoMockable.swift in Sources */,
 				AA4CB5F62382CD24004DD81C /* RateAPITest.swift in Sources */,
 				AA4CB61023841A58004DD81C /* RateServiceMock.swift in Sources */,
 				AA4CB60E23840B33004DD81C /* RateViewModelTest.swift in Sources */,

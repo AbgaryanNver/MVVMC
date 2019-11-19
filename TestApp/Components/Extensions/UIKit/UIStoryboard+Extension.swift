@@ -3,8 +3,6 @@ import UIKit
 extension UIStoryboard {
     enum Storyboard: String {
         case first
-        case rates
-        case addCurrency
 
         var filename: String {
             rawValue.capitalized

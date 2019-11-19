@@ -1,10 +1,10 @@
 import UIKit
 
 class CurrencyCoordinator: NavigationCoordinator {
-    override func start(animated _: Bool) {
+    override func start(animated: Bool) {
         let viewModel = CurrencyViewModel(context: context, flowDelegate: self, title: "Add Currency")
         let viewController = CurrencyViewController(with: viewModel)
-        push(viewController, animated: true)
+        push(viewController, animated: animated)
     }
 }
 

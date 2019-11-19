@@ -1,6 +1,5 @@
 import Foundation
 
-// sourcery:begin: AutoMockable
 protocol TimeServiceProtocol {
     init(duration: Float)
     func startTime(output: TimeServiceOutputProtocol)

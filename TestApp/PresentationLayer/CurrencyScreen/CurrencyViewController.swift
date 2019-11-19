@@ -6,16 +6,6 @@ class CurrencyViewController: BaseViewController<CurrencyViewModel> {
     private lazy var nextBarButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButtonAction))
     private lazy var backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
 
-    private lazy var indicatorView = UIActivityIndicatorView {
-        $0.style = .gray
-        $0.hidesWhenStopped = true
-    }
-
-    private lazy var indicatorButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(customView: indicatorView)
-        return button
-    }()
-
     override func setupUI() {
         super.setupUI()
         view.backgroundColor = .red
@@ -42,18 +32,6 @@ class CurrencyViewController: BaseViewController<CurrencyViewModel> {
         super.bind(viewModel: viewModel)
         viewModel.dataSource.addObserver { [weak self] items in
             self?.setDataSourceForTableView(items)
-        }
-
-        viewModel.isLoading.addObserver(fireNow: false) { [weak self] isLoading in
-            print("NNN: isloading = \(isLoading)")
-            self?.tableView.isUserInteractionEnabled = !isLoading
-            if isLoading {
-                self?.indicatorView.startAnimating()
-                self?.navigationItem.rightBarButtonItem = self?.indicatorButton
-            } else {
-                self?.indicatorView.stopAnimating()
-                self?.navigationItem.rightBarButtonItem = self?.nextBarButton
-            }
         }
 
         viewModel.isNextButtonActive.addObserver { [weak self] isNextButtonActive in

@@ -1,6 +1,5 @@
 import Foundation
 
-// sourcery:begin: AutoMockable
 protocol CurrencyCoordinatorDelgate: AnyObject {
     func didTapedCell()
 }
@@ -10,7 +9,6 @@ class CurrencyViewModel: BaseViewModel {
     let allKeys: [CurrencyKey]
 
     var dataSource = Observable<[TableViewItem]>([])
-    var isLoading = Observable<Bool>(false)
     var isNextButtonActive = Observable<Bool>(false)
     weak var flowDelegate: CurrencyCoordinatorDelgate?
 

@@ -1,3 +1,4 @@
+// swiftlint:disable all
 class APIProviderMock: APIProvider {
     // MARK: - getRates
 
