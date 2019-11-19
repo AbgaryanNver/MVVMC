@@ -2,14 +2,13 @@ import Foundation
 
 class RatesViewModel: BaseViewModel {
     let timeService: TimeServiceProtocol
-    let rateService = RateService()
-
-    var fromCurrencyKey: CurrencyKey? { rateService.key }
-    var toCurrencyKeys: [CurrencyKey] { rateService.keys }
+    let context: CoordinatorContext
 
     var rateItems = Observable<[TableViewItem]>([])
 
-    private let context: CoordinatorContext
+    var fromCurrencyKey: CurrencyKey? { context.rateService.key }
+    var toCurrencyKeys: [CurrencyKey] { context.rateService.keys }
+    var itemsFromRateService: [TableViewItem] { context.rateService.getItems() }
 
     init(context: CoordinatorContext,
          timeService: TimeServiceProtocol = TimeService(duration: 1),
@@ -20,7 +19,7 @@ class RatesViewModel: BaseViewModel {
     }
 
     func viewDidLoad() {
-        setItems()
+        setItems(itemsFromRateService)
         timeService.startTime(output: self)
     }
 
@@ -30,11 +29,15 @@ class RatesViewModel: BaseViewModel {
 
     func didRemove(_ item: TableViewItem) {
         if let rateItem = item as? RateItem {
-            rateService.removeItem(by: rateItem.toCurrencyKey)
+            context.rateService.removeItem(by: rateItem.toCurrencyKey)
         }
     }
 
-    private func getRates() {
+    func setItems(_ items: [TableViewItem]) {
+        rateItems.value = items
+    }
+
+    func getRates(_ fromCurrencyKey: CurrencyKey?, _ toCurrencyKeys: [CurrencyKey]) {
         guard let fromCurrencyKey = fromCurrencyKey else {
             return
         }
@@ -49,22 +52,18 @@ class RatesViewModel: BaseViewModel {
             switch result {
                 case let .success(response):
                     if let response = response {
-                        self.rateService.rate = response
-                        self.setItems()
+                        self.context.rateService.setRate(response)
+                        self.setItems(self.itemsFromRateService)
                     }
                 case let .failure(error):
                     print(error)
             }
         }
     }
-
-    private func setItems() {
-        rateItems.value = rateService.getItems()
-    }
 }
 
 extension RatesViewModel: TimeServiceOutputProtocol {
     func didTriggerTimer() {
-        getRates()
+        getRates(fromCurrencyKey, toCurrencyKeys)
     }
 }

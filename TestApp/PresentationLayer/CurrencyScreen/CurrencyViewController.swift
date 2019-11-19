@@ -1,6 +1,6 @@
 import UIKit
 
-class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
+class CurrencyViewController: BaseViewController<CurrencyViewModel> {
     private let tableViewDataProvider = TableViewDataProvider()
     private lazy var tableView = UITableView()
     private lazy var nextBarButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButtonAction))
@@ -34,11 +34,11 @@ class AddCurrencyViewController: BaseViewController<AddCurrencyViewModel> {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.setItems()
+        viewModel.viewWillAppear()
         navigationItem.rightBarButtonItem = nextBarButton
     }
 
-    override func bind(viewModel _: AddCurrencyViewModel) {
+    override func bind(viewModel _: CurrencyViewModel) {
         super.bind(viewModel: viewModel)
         viewModel.dataSource.addObserver { [weak self] items in
             self?.setDataSourceForTableView(items)

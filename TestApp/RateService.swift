@@ -1,6 +1,18 @@
 import Foundation
 
-class RateService {
+protocol RateService {
+    var rate: [String: Double] { get set }
+    var key: CurrencyKey? { get set }
+    var keys: [CurrencyKey] { get set }
+
+    func getItems() -> [RateItem]
+    func removeItem(by key: CurrencyKey)
+    func storeState(_ currencyKey: CurrencyKey)
+    func clear()
+    func setRate(_ rate: [String: Double])
+}
+
+class RateServiceImpl: RateService {
     @CodableUserDefault(key: "Rate", defaultValue: [:])
 
     var rate: [String: Double]
@@ -45,6 +57,10 @@ class RateService {
         if !keys.contains(currencyKey), key != currencyKey {
             keys.append(currencyKey)
         }
+    }
+
+    func setRate(_ rate: [String: Double]) {
+        self.rate = rate
     }
 
     func clear() {

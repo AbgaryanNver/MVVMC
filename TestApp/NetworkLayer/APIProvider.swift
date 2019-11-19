@@ -23,7 +23,11 @@ struct RateAPI: APIHandler {
     }
 }
 
-class APIProvider {
+protocol APIProvider {
+    func getRates(ratePair: [String], completion: @escaping (Result<[String: Double]?, Error>) -> Void)
+}
+
+class APIProviderImpl: APIProvider {
     func getRates(ratePair: [String], completion: @escaping (Result<[String: Double]?, Error>) -> Void) {
         let api = RateAPI()
         APILoader(apiRequest: api).loadAPIRequest(requestData: ratePair) { result in

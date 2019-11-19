@@ -21,7 +21,7 @@ class AppCoordinator: NavigationCoordinator {
 
 extension AppCoordinator: AppCoordinatorDelegate {
     func addCurrencyAction() {
-        let addcurrencyCoordinator = AddCurrencyCoordinator(context: context, root: navigationController)
-        addcurrencyCoordinator.start(animated: true)
+        let currencyCoordinator = CurrencyCoordinator(context: context, root: navigationController)
+        currencyCoordinator.start(animated: true)
     }
 }

@@ -23,9 +23,8 @@
 		AA426040237D0EB1005D4F62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA42603F237D0EB1005D4F62 /* Assets.xcassets */; };
 		AA426043237D0EB1005D4F62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA426041237D0EB1005D4F62 /* LaunchScreen.storyboard */; };
 		AA42604E237D0EB1005D4F62 /* TestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42604D237D0EB1005D4F62 /* TestAppTests.swift */; };
-		AA426059237D0EB1005D4F62 /* TestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426058237D0EB1005D4F62 /* TestAppUITests.swift */; };
 		AA426072237D1215005D4F62 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42606B237D1215005D4F62 /* MockURLProtocol.swift */; };
-		AA426073237D1215005D4F62 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42606C237D1215005D4F62 /* MockService.swift */; };
+		AA426073237D1215005D4F62 /* APIProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42606C237D1215005D4F62 /* APIProviderMock.swift */; };
 		AA426074237D1215005D4F62 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42606E237D1215005D4F62 /* Endpoints.swift */; };
 		AA426075237D1215005D4F62 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42606F237D1215005D4F62 /* HTTPMethod.swift */; };
 		AA426076237D1215005D4F62 /* APILoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA426070237D1215005D4F62 /* APILoader.swift */; };
@@ -51,9 +50,9 @@
 		AA4260C8237D34D8005D4F62 /* RateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260C7237D34D8005D4F62 /* RateResponse.swift */; };
 		AA4260CA237D5528005D4F62 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260C9237D5528005D4F62 /* Observable.swift */; };
 		AA4260CF237D58BF005D4F62 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260CE237D58BF005D4F62 /* FirstViewModel.swift */; };
-		AA4260D1237D68AD005D4F62 /* AddCurrencyCoordinaot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D0237D68AD005D4F62 /* AddCurrencyCoordinaot.swift */; };
-		AA4260D3237D68CA005D4F62 /* AddCurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D2237D68CA005D4F62 /* AddCurrencyViewModel.swift */; };
-		AA4260D5237D68E2005D4F62 /* AddCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D4237D68E2005D4F62 /* AddCurrencyViewController.swift */; };
+		AA4260D1237D68AD005D4F62 /* CurrencyCoordinaot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D0237D68AD005D4F62 /* CurrencyCoordinaot.swift */; };
+		AA4260D3237D68CA005D4F62 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D2237D68CA005D4F62 /* CurrencyViewModel.swift */; };
+		AA4260D5237D68E2005D4F62 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260D4237D68E2005D4F62 /* CurrencyViewController.swift */; };
 		AA4260DC237D8085005D4F62 /* TableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260DB237D8085005D4F62 /* TableViewDataProvider.swift */; };
 		AA4260DE237D81A1005D4F62 /* TableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260DD237D81A1005D4F62 /* TableViewProtocols.swift */; };
 		AA4260E0237D8249005D4F62 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260DF237D8249005D4F62 /* UITableView+Extension.swift */; };
@@ -61,19 +60,18 @@
 		AA4260E4237D85EE005D4F62 /* CountryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4260E3237D85EE005D4F62 /* CountryItem.swift */; };
 		AA4CB5F62382CD24004DD81C /* RateAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5F52382CD24004DD81C /* RateAPITest.swift */; };
 		AA4CB5F82382E358004DD81C /* APILoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5F72382E358004DD81C /* APILoaderTests.swift */; };
-		AA4CB5FE2382EE8B004DD81C /* TimeServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5FD2382EE8B004DD81C /* TimeServiceTest.swift */; };
 		AA4CB6002382EE99004DD81C /* RateServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB5FF2382EE99004DD81C /* RateServiceTest.swift */; };
+		AA4CB6042383C9BE004DD81C /* CurrencyViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB6032383C9BE004DD81C /* CurrencyViewModelTest.swift */; };
+		AA4CB6092383CBD6004DD81C /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB6082383CBD6004DD81C /* AutoMockable.swift */; };
+		AA4CB60C2383E4E3004DD81C /* CoordinatorContextMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB60B2383E4E3004DD81C /* CoordinatorContextMock.swift */; };
+		AA4CB60E23840B33004DD81C /* RateViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB60D23840B33004DD81C /* RateViewModelTest.swift */; };
+		AA4CB61023841A58004DD81C /* RateServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB60F23841A58004DD81C /* RateServiceMock.swift */; };
+		AA4CB61223843236004DD81C /* TimeServiceProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB61123843236004DD81C /* TimeServiceProtocolMock.swift */; };
+		AA4CB614238432E6004DD81C /* CurrencyCoordinatorDelgateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4CB613238432E6004DD81C /* CurrencyCoordinatorDelgateMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		AA42604A237D0EB1005D4F62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA42602B237D0EB0005D4F62 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AA426032237D0EB0005D4F62;
-			remoteInfo = TestApp;
-		};
-		AA426055237D0EB1005D4F62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AA42602B237D0EB0005D4F62 /* Project object */;
 			proxyType = 1;
@@ -103,11 +101,8 @@
 		AA426049237D0EB1005D4F62 /* TestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA42604D237D0EB1005D4F62 /* TestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppTests.swift; sourceTree = "<group>"; };
 		AA42604F237D0EB1005D4F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA426054237D0EB1005D4F62 /* TestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA426058237D0EB1005D4F62 /* TestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUITests.swift; sourceTree = "<group>"; };
-		AA42605A237D0EB2005D4F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA42606B237D1215005D4F62 /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
-		AA42606C237D1215005D4F62 /* MockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		AA42606C237D1215005D4F62 /* APIProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProviderMock.swift; sourceTree = "<group>"; };
 		AA42606E237D1215005D4F62 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		AA42606F237D1215005D4F62 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		AA426070237D1215005D4F62 /* APILoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILoader.swift; sourceTree = "<group>"; };
@@ -133,9 +128,9 @@
 		AA4260C7237D34D8005D4F62 /* RateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateResponse.swift; sourceTree = "<group>"; };
 		AA4260C9237D5528005D4F62 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		AA4260CE237D58BF005D4F62 /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
-		AA4260D0237D68AD005D4F62 /* AddCurrencyCoordinaot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyCoordinaot.swift; sourceTree = "<group>"; };
-		AA4260D2237D68CA005D4F62 /* AddCurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewModel.swift; sourceTree = "<group>"; };
-		AA4260D4237D68E2005D4F62 /* AddCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewController.swift; sourceTree = "<group>"; };
+		AA4260D0237D68AD005D4F62 /* CurrencyCoordinaot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCoordinaot.swift; sourceTree = "<group>"; };
+		AA4260D2237D68CA005D4F62 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
+		AA4260D4237D68E2005D4F62 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		AA4260DB237D8085005D4F62 /* TableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataProvider.swift; sourceTree = "<group>"; };
 		AA4260DD237D81A1005D4F62 /* TableViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocols.swift; sourceTree = "<group>"; };
 		AA4260DF237D8249005D4F62 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -143,8 +138,14 @@
 		AA4260E3237D85EE005D4F62 /* CountryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItem.swift; sourceTree = "<group>"; };
 		AA4CB5F52382CD24004DD81C /* RateAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAPITest.swift; sourceTree = "<group>"; };
 		AA4CB5F72382E358004DD81C /* APILoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoaderTests.swift; sourceTree = "<group>"; };
-		AA4CB5FD2382EE8B004DD81C /* TimeServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeServiceTest.swift; sourceTree = "<group>"; };
 		AA4CB5FF2382EE99004DD81C /* RateServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateServiceTest.swift; sourceTree = "<group>"; };
+		AA4CB6032383C9BE004DD81C /* CurrencyViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelTest.swift; sourceTree = "<group>"; };
+		AA4CB6082383CBD6004DD81C /* AutoMockable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
+		AA4CB60B2383E4E3004DD81C /* CoordinatorContextMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorContextMock.swift; sourceTree = "<group>"; };
+		AA4CB60D23840B33004DD81C /* RateViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewModelTest.swift; sourceTree = "<group>"; };
+		AA4CB60F23841A58004DD81C /* RateServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateServiceMock.swift; sourceTree = "<group>"; };
+		AA4CB61123843236004DD81C /* TimeServiceProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeServiceProtocolMock.swift; sourceTree = "<group>"; };
+		AA4CB613238432E6004DD81C /* CurrencyCoordinatorDelgateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCoordinatorDelgateMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,13 +163,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA426051237D0EB1005D4F62 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -177,7 +171,6 @@
 			children = (
 				AA426035237D0EB0005D4F62 /* TestApp */,
 				AA42604C237D0EB1005D4F62 /* TestAppTests */,
-				AA426057237D0EB1005D4F62 /* TestAppUITests */,
 				AA426034237D0EB0005D4F62 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -187,7 +180,6 @@
 			children = (
 				AA426033237D0EB0005D4F62 /* TestApp.app */,
 				AA426049237D0EB1005D4F62 /* TestAppTests.xctest */,
-				AA426054237D0EB1005D4F62 /* TestAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,23 +201,15 @@
 		AA42604C237D0EB1005D4F62 /* TestAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA4CB6072383CBD6004DD81C /* Generated */,
 				AA4CB5FC2382EDAA004DD81C /* ServicesTest */,
 				AA4CB5F42382CCE2004DD81C /* NetworkLayerTest */,
-				AA4CB5FA2382ED33004DD81C /* AddCurrencyModuleTest */,
+				AA4CB5FA2382ED33004DD81C /* CurrencyModuleTest */,
 				AA4CB5FB2382ED65004DD81C /* RateModuleTest */,
 				AA42604D237D0EB1005D4F62 /* TestAppTests.swift */,
 				AA42604F237D0EB1005D4F62 /* Info.plist */,
 			);
 			path = TestAppTests;
-			sourceTree = "<group>";
-		};
-		AA426057237D0EB1005D4F62 /* TestAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AA426058237D0EB1005D4F62 /* TestAppUITests.swift */,
-				AA42605A237D0EB2005D4F62 /* Info.plist */,
-			);
-			path = TestAppUITests;
 			sourceTree = "<group>";
 		};
 		AA426066237D0F21005D4F62 /* Resources */ = {
@@ -255,7 +239,7 @@
 				AA4260D9237D805E005D4F62 /* Common */,
 				AA4260B3237D1D3D005D4F62 /* Base */,
 				AA4260CC237D5851005D4F62 /* FirstScreen */,
-				AA4260CD237D5883005D4F62 /* AddCurrencyScreen */,
+				AA4260CD237D5883005D4F62 /* CurrencyScreen */,
 				AA4260CB237D584C005D4F62 /* RateScreen */,
 			);
 			path = PresentationLayer;
@@ -275,7 +259,11 @@
 			isa = PBXGroup;
 			children = (
 				AA42606B237D1215005D4F62 /* MockURLProtocol.swift */,
-				AA42606C237D1215005D4F62 /* MockService.swift */,
+				AA42606C237D1215005D4F62 /* APIProviderMock.swift */,
+				AA4CB60B2383E4E3004DD81C /* CoordinatorContextMock.swift */,
+				AA4CB60F23841A58004DD81C /* RateServiceMock.swift */,
+				AA4CB61123843236004DD81C /* TimeServiceProtocolMock.swift */,
+				AA4CB613238432E6004DD81C /* CurrencyCoordinatorDelgateMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -394,16 +382,16 @@
 			path = FirstScreen;
 			sourceTree = "<group>";
 		};
-		AA4260CD237D5883005D4F62 /* AddCurrencyScreen */ = {
+		AA4260CD237D5883005D4F62 /* CurrencyScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AA4260D0237D68AD005D4F62 /* AddCurrencyCoordinaot.swift */,
-				AA4260D4237D68E2005D4F62 /* AddCurrencyViewController.swift */,
-				AA4260D2237D68CA005D4F62 /* AddCurrencyViewModel.swift */,
+				AA4260D0237D68AD005D4F62 /* CurrencyCoordinaot.swift */,
+				AA4260D4237D68E2005D4F62 /* CurrencyViewController.swift */,
+				AA4260D2237D68CA005D4F62 /* CurrencyViewModel.swift */,
 				AA4260E1237D8551005D4F62 /* CountryCell.swift */,
 				AA4260E3237D85EE005D4F62 /* CountryItem.swift */,
 			);
-			path = AddCurrencyScreen;
+			path = CurrencyScreen;
 			sourceTree = "<group>";
 		};
 		AA4260D9237D805E005D4F62 /* Common */ = {
@@ -433,16 +421,18 @@
 			path = NetworkLayerTest;
 			sourceTree = "<group>";
 		};
-		AA4CB5FA2382ED33004DD81C /* AddCurrencyModuleTest */ = {
+		AA4CB5FA2382ED33004DD81C /* CurrencyModuleTest */ = {
 			isa = PBXGroup;
 			children = (
+				AA4CB6032383C9BE004DD81C /* CurrencyViewModelTest.swift */,
 			);
-			path = AddCurrencyModuleTest;
+			path = CurrencyModuleTest;
 			sourceTree = "<group>";
 		};
 		AA4CB5FB2382ED65004DD81C /* RateModuleTest */ = {
 			isa = PBXGroup;
 			children = (
+				AA4CB60D23840B33004DD81C /* RateViewModelTest.swift */,
 			);
 			path = RateModuleTest;
 			sourceTree = "<group>";
@@ -450,10 +440,17 @@
 		AA4CB5FC2382EDAA004DD81C /* ServicesTest */ = {
 			isa = PBXGroup;
 			children = (
-				AA4CB5FD2382EE8B004DD81C /* TimeServiceTest.swift */,
 				AA4CB5FF2382EE99004DD81C /* RateServiceTest.swift */,
 			);
 			path = ServicesTest;
+			sourceTree = "<group>";
+		};
+		AA4CB6072383CBD6004DD81C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				AA4CB6082383CBD6004DD81C /* AutoMockable.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +482,7 @@
 				AA426045237D0EB1005D4F62 /* Sources */,
 				AA426046237D0EB1005D4F62 /* Frameworks */,
 				AA426047237D0EB1005D4F62 /* Resources */,
+				AA4CB60A2383CCDD004DD81C /* Sourcery */,
 			);
 			buildRules = (
 			);
@@ -495,24 +493,6 @@
 			productName = TestAppTests;
 			productReference = AA426049237D0EB1005D4F62 /* TestAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		AA426053237D0EB1005D4F62 /* TestAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA426063237D0EB2005D4F62 /* Build configuration list for PBXNativeTarget "TestAppUITests" */;
-			buildPhases = (
-				AA426050237D0EB1005D4F62 /* Sources */,
-				AA426051237D0EB1005D4F62 /* Frameworks */,
-				AA426052237D0EB1005D4F62 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AA426056237D0EB1005D4F62 /* PBXTargetDependency */,
-			);
-			name = TestAppUITests;
-			productName = TestAppUITests;
-			productReference = AA426054237D0EB1005D4F62 /* TestAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -527,10 +507,6 @@
 						CreatedOnToolsVersion = 11.1;
 					};
 					AA426048237D0EB1005D4F62 = {
-						CreatedOnToolsVersion = 11.1;
-						TestTargetID = AA426032237D0EB0005D4F62;
-					};
-					AA426053237D0EB1005D4F62 = {
 						CreatedOnToolsVersion = 11.1;
 						TestTargetID = AA426032237D0EB0005D4F62;
 					};
@@ -551,7 +527,6 @@
 			targets = (
 				AA426032237D0EB0005D4F62 /* TestApp */,
 				AA426048237D0EB1005D4F62 /* TestAppTests */,
-				AA426053237D0EB1005D4F62 /* TestAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -568,13 +543,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AA426047237D0EB1005D4F62 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA426052237D0EB1005D4F62 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -620,6 +588,24 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftformat >/dev/null; then\n        swiftformat .\n    else\n        sh setup.sh\n    fi\nfi\n";
 		};
+		AA4CB60A2383CCDD004DD81C /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sourcery\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -641,14 +627,14 @@
 				AA4260C4237D294C005D4F62 /* StoryboardIdentifiable.swift in Sources */,
 				AA4260CF237D58BF005D4F62 /* FirstViewModel.swift in Sources */,
 				AA4260C8237D34D8005D4F62 /* RateResponse.swift in Sources */,
-				AA4260D3237D68CA005D4F62 /* AddCurrencyViewModel.swift in Sources */,
+				AA4260D3237D68CA005D4F62 /* CurrencyViewModel.swift in Sources */,
 				AA4260CA237D5528005D4F62 /* Observable.swift in Sources */,
 				AA14F41123800B0E00B3BD4B /* TimeService.swift in Sources */,
 				AA4260DE237D81A1005D4F62 /* TableViewProtocols.swift in Sources */,
 				AA426075237D1215005D4F62 /* HTTPMethod.swift in Sources */,
 				AA4260BF237D28AE005D4F62 /* UIStoryboard+Extension.swift in Sources */,
 				AA14F404237EFC2800B3BD4B /* RateCell.swift in Sources */,
-				AA4260D1237D68AD005D4F62 /* AddCurrencyCoordinaot.swift in Sources */,
+				AA4260D1237D68AD005D4F62 /* CurrencyCoordinaot.swift in Sources */,
 				AA426037237D0EB0005D4F62 /* AppDelegate.swift in Sources */,
 				AA4260E0237D8249005D4F62 /* UITableView+Extension.swift in Sources */,
 				AA4260DC237D8085005D4F62 /* TableViewDataProvider.swift in Sources */,
@@ -657,7 +643,7 @@
 				AA14F3E4237E8A7600B3BD4B /* AnchorMaker.swift in Sources */,
 				AA4260AA237D135A005D4F62 /* Data+Extension.swift in Sources */,
 				AA4260C2237D2904005D4F62 /* UIViewController+Extension.swift in Sources */,
-				AA426073237D1215005D4F62 /* MockService.swift in Sources */,
+				AA426073237D1215005D4F62 /* APIProviderMock.swift in Sources */,
 				AA426074237D1215005D4F62 /* Endpoints.swift in Sources */,
 				AA4260A9237D135A005D4F62 /* NSObject+AssociatedObject.swift in Sources */,
 				AA14F413238013D900B3BD4B /* RateService.swift in Sources */,
@@ -667,7 +653,7 @@
 				AA4260E4237D85EE005D4F62 /* CountryItem.swift in Sources */,
 				AA4260AB237D135A005D4F62 /* Presentable.swift in Sources */,
 				AA4260BB237D1D3D005D4F62 /* CoordinatorContext.swift in Sources */,
-				AA4260D5237D68E2005D4F62 /* AddCurrencyViewController.swift in Sources */,
+				AA4260D5237D68E2005D4F62 /* CurrencyViewController.swift in Sources */,
 				AA14F400237ECF1100B3BD4B /* Array+Extension.swift in Sources */,
 				AA42607C237D1302005D4F62 /* APIError.swift in Sources */,
 				AA42609E237D135A005D4F62 /* Reachability.swift in Sources */,
@@ -681,19 +667,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA4CB5FE2382EE8B004DD81C /* TimeServiceTest.swift in Sources */,
+				AA4CB6042383C9BE004DD81C /* CurrencyViewModelTest.swift in Sources */,
+				AA4CB60C2383E4E3004DD81C /* CoordinatorContextMock.swift in Sources */,
+				AA4CB61223843236004DD81C /* TimeServiceProtocolMock.swift in Sources */,
+				AA4CB6092383CBD6004DD81C /* AutoMockable.swift in Sources */,
 				AA4CB5F62382CD24004DD81C /* RateAPITest.swift in Sources */,
+				AA4CB61023841A58004DD81C /* RateServiceMock.swift in Sources */,
+				AA4CB60E23840B33004DD81C /* RateViewModelTest.swift in Sources */,
+				AA4CB614238432E6004DD81C /* CurrencyCoordinatorDelgateMock.swift in Sources */,
 				AA4CB5F82382E358004DD81C /* APILoaderTests.swift in Sources */,
 				AA42604E237D0EB1005D4F62 /* TestAppTests.swift in Sources */,
 				AA4CB6002382EE99004DD81C /* RateServiceTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA426050237D0EB1005D4F62 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA426059237D0EB1005D4F62 /* TestAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,11 +688,6 @@
 			isa = PBXTargetDependency;
 			target = AA426032237D0EB0005D4F62 /* TestApp */;
 			targetProxy = AA42604A237D0EB1005D4F62 /* PBXContainerItemProxy */;
-		};
-		AA426056237D0EB1005D4F62 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AA426032237D0EB0005D4F62 /* TestApp */;
-			targetProxy = AA426055237D0EB1005D4F62 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -924,44 +903,6 @@
 			};
 			name = Release;
 		};
-		AA426064237D0EB2005D4F62 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = am.abgaryannver.test.TestAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestApp;
-			};
-			name = Debug;
-		};
-		AA426065237D0EB2005D4F62 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = am.abgaryannver.test.TestAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -988,15 +929,6 @@
 			buildConfigurations = (
 				AA426061237D0EB2005D4F62 /* Debug */,
 				AA426062237D0EB2005D4F62 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AA426063237D0EB2005D4F62 /* Build configuration list for PBXNativeTarget "TestAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA426064237D0EB2005D4F62 /* Debug */,
-				AA426065237D0EB2005D4F62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

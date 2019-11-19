@@ -8,7 +8,7 @@ class RateServiceTest: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        sut = RateService()
+        sut = RateServiceImpl()
     }
 
     override func tearDown() {

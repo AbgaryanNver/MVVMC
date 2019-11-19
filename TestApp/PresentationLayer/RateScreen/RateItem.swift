@@ -13,3 +13,9 @@ struct RateItem: TableViewItem {
         self.rateValue = rateValue
     }
 }
+
+extension RateItem: Equatable {
+    static func == (lhs: RateItem, rhs: RateItem) -> Bool {
+        lhs.cellClassIdentifier == rhs.cellClassIdentifier
+    }
+}
